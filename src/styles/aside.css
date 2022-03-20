@@ -1,0 +1,18 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
+
+  #left-side-navigation {
+    display: grid;
+    grid-template-rows: 85px 1fr;
+    background-color: red;
+  }
+
+  .filter_Big_Container{
+      height: 500px;
+      width: 100%;
+      display:flex;
+      flex-direction: column;
+  }

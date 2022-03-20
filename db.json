@@ -1,0 +1,25 @@
+{
+  "movies": [
+    {
+      "id": "tt1877830",
+      "imDbRating": "8.4",
+      "fullTitle": "The Batman (2022)",
+      "image": "https://imdb-api.com/images/original/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_Ratio0.6751_AL_.jpg",
+      "releaseDate": "2022-03-04"
+    },
+    {
+      "id": "tt10872600",
+      "imDbRating": "8.6",
+      "fullTitle": "Spider-Man: No Way Home (2021)",
+      "image": "https://imdb-api.com/images/original/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_Ratio0.6751_AL_.jpg",
+      "releaseDate": "2025-12-17"
+    },
+    {
+      "id": "tt0468569",
+      "imDbRating": "9.1",
+      "fullTitle": "The Dark Knight (2008)",
+      "image": "https://imdb-api.com/images/original/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_Ratio0.6751_AL_.jpg",
+      "releaseDate": "2008-07-18"
+    }
+  ]
+}
