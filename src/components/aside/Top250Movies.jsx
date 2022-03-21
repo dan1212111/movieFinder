@@ -2,24 +2,36 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
-export default function Top250Movies() {
-    const [top250Movies, setTop250Movies] = useState(null)
-    
-    useEffect(() => {
-      fetch(`https://imdb-api.com/en/API/Top250Movies/k_x9gxptob`)
-        .then((res) => res.json())
-        .then((data) => setTop250Movies(data.items))
-    }, [])
-    console.log(top250Movies)
+export default function Top250Movies(props) {
+  const { top250Movies, filterAZ } = props
+let movieArray = top250Movies
+
+  if(filterAZ === true) {
+    FilterArrAZ()
+  } if (filterAZ === false) {
+    movieArray = top250Movies
+  }
   
-    if (!top250Movies) {
-      return <p>Loading...</p>
-    }
+
+  function FilterArrAZ() {
+   const movieList = [...movieArray]
+    movieList.sort(function(a, b) {
+      let movieA= a.title.toLowerCase(), movieB= b.title.toLowerCase()
+      if(movieA < movieB)
+      return -1
+      if (movieA > movieB)
+      return 1
+      return 0
+    })
+    movieArray = movieList
+  }
+
+  
 
   return (
     <>
     <nav id="movie-list">
-        {top250Movies.map((movie, index) => (
+        {movieArray.map((movie, index) => (
             <Link to={`/movie/${movie.id}`}>
              <figure key={index}>
              <div id='figure-image'>

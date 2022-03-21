@@ -6,13 +6,20 @@
 
   #left-side-navigation {
     display: grid;
-    grid-template-rows: 85px 1fr;
+    grid-template-rows: 85px 200px 1fr;
     background-color: red;
   }
 
-  .filter_Big_Container{
+  .filter_Big_Container1{
       height: 500px;
       width: 100%;
       display:flex;
       flex-direction: column;
   }
+
+  .filter_Big_Container2{
+    height: 500px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+}
