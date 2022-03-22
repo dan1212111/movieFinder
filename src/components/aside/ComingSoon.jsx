@@ -2,9 +2,11 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import  {FilterArrAZ} from "./filters/FilterAZ"
+import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
+import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
 
 export default function ComingSoon(props) {
-  const { comingSoon, filterAZ } = props
+  const { comingSoon, filterAZ, ascendingYearRelease, descendingYearRelease } = props
   let movieArray = comingSoon
 
   useEffect(() => {
@@ -12,10 +14,12 @@ export default function ComingSoon(props) {
   }, [comingSoon])
 
   if(filterAZ === true) {
-    movieArray = FilterArrAZ(comingSoon)
-  } if (filterAZ === false) {
-    movieArray = comingSoon
-  } 
+    movieArray = FilterArrAZ(movieArray)
+  } if(ascendingYearRelease === true) {
+    movieArray = FilterAscendingYearRelease(movieArray)
+  } if(descendingYearRelease === true) {
+    movieArray = FilterDescendingYearRelease(movieArray)
+  }
 
 
 

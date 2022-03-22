@@ -3,25 +3,26 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import  {FilterArrAZ} from "./filters/FilterAZ"
 import  {FilterDescendingImdbRating} from "./filters/FilterDescendingImdbRating"
+import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
+import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
 
 export default function Top250TVs(props) {
-  const { top250TVs, filterAZ, descendingImdbRating } = props
+  const { top250TVs, filterAZ, descendingImdbRating, ascendingYearRelease, descendingYearRelease } = props
   let movieArray = top250TVs
 
   useEffect(() => {
   movieArray = top250TVs
   }, [top250TVs])
 
+
   if(filterAZ === true) {
     movieArray = FilterArrAZ(top250TVs)
-  } if(filterAZ === false && descendingImdbRating === true) {
+  } if (descendingImdbRating === true) {
     movieArray = FilterDescendingImdbRating(top250TVs)
-  } if (filterAZ === true && descendingImdbRating === false) {
-    movieArray = FilterArrAZ(top250TVs)
-  } if(filterAZ === true && descendingImdbRating === true) {
-    FilterArrAZ(FilterDescendingImdbRating(top250TVs))
-  } if(filterAZ === false && descendingImdbRating === false) {
-    movieArray = top250TVs
+  } if(ascendingYearRelease === true) {
+    movieArray = FilterAscendingYearRelease(movieArray)
+  } if(descendingYearRelease === true) {
+    movieArray = FilterDescendingYearRelease(movieArray)
   }
 
 

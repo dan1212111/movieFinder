@@ -21,6 +21,8 @@ function App() {
   const [filterAZ, setFilterAZ] = useState(false)
   const [ascendingImdbRating, setAscendingImdbRating] = useState(false)
   const [descendingImdbRating, setDescendingImdbRating] = useState(false)
+  const [ascendingYearRelease, setAscendingYearRelease] = useState(false)
+  const [descendingYearRelease, setDescendingYearRelease] = useState(false)
     
   useEffect(() => {
     fetch(`https://imdb-api.com/en/API/Top250Movies/k_x9gxptob`)
@@ -60,14 +62,24 @@ function App() {
 
   function handleFilterAscendingImdbRating(event) {
     const inputValue = event.target.checked
-    console.log(inputValue)
     setAscendingImdbRating(inputValue)
   }
 
   function handleFilterDescendingImdbRating(event) {
     const inputValue = event.target.checked
-    console.log(inputValue)
     setDescendingImdbRating(inputValue)
+  }
+
+  function handleFilterAscendingYearRelease(event) {
+    const inputValue = event.target.checked
+    console.log(inputValue)
+    setAscendingYearRelease(inputValue)
+  }
+
+  function handleFilterDescendingYearRelease(event) {
+    const inputValue = event.target.checked
+    console.log(inputValue)
+    setDescendingYearRelease(inputValue)
   }
 
 
@@ -91,11 +103,11 @@ function App() {
           <Route path="/" element={<Main />}/>
           <Route path="/movie/:id" element={<ViewMovie />}/>
           <Route path="/myMovies" element={<MyMovies />} />
-          <Route path="/movies/fTop250Movies" element={<Top250Movies top250Movies={top250Movies} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating}/>} />
-          <Route path="/movies/fComingSoon" element={<ComingSoon comingSoon={comingSoon} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating}/>} />
-          <Route path="/movies/fTop250TVs" element={<Top250TVs top250TVs={top250TVs} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating}/>} />
-          <Route path="/movies/fBoxOffice" element={<BoxOffice boxOffice={boxOffice} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating}/>} />
-          <Route path="/movies/fMostPopularMovies" element={<MostPopularMovies mostPopularMovies={mostPopularMovies} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating}/>} />
+          <Route path="/movies/fTop250Movies" element={<Top250Movies top250Movies={top250Movies} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating} ascendingYearRelease={ascendingYearRelease} descendingYearRelease={descendingYearRelease}/>} />
+          <Route path="/movies/fComingSoon" element={<ComingSoon comingSoon={comingSoon} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating} ascendingYearRelease={ascendingYearRelease} descendingYearRelease={descendingYearRelease}/>} />
+          <Route path="/movies/fTop250TVs" element={<Top250TVs top250TVs={top250TVs} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating} ascendingYearRelease={ascendingYearRelease} descendingYearRelease={descendingYearRelease}/>} />
+          <Route path="/movies/fBoxOffice" element={<BoxOffice boxOffice={boxOffice} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating} ascendingYearRelease={ascendingYearRelease} descendingYearRelease={descendingYearRelease}/>} />
+          <Route path="/movies/fMostPopularMovies" element={<MostPopularMovies mostPopularMovies={mostPopularMovies} filterAZ={filterAZ} ascendingImdbRating={ascendingImdbRating} descendingImdbRating={descendingImdbRating} ascendingYearRelease={ascendingYearRelease} descendingYearRelease={descendingYearRelease}/>} />
           </Routes>
       </main>
       {/* <Aside /> */}
@@ -118,8 +130,16 @@ function App() {
     Ascending Imdb Rating
     </label>
     <label>
-    <input type="checkbox" name="filterAscendingImdbRating" id="filterAscendingImdbRating" onChange={handleFilterDescendingImdbRating} checked={descendingImdbRating}/>
+    <input type="checkbox" name="filterDescendingImdbRating" id="filterDescendingImdbRating" onChange={handleFilterDescendingImdbRating} checked={descendingImdbRating}/>
     Descending Imdb Rating
+    </label>
+    <label>
+    <input type="checkbox" name="filterAscendingYearRelease" id="filterAscendingYearRelease" onChange={handleFilterAscendingYearRelease} checked={ascendingYearRelease}/>
+    Ascending Year Release
+    </label>
+    <label>
+    <input type="checkbox" name="filterDescendingYearRelease" id="filterDescendingYearRelease" onChange={handleFilterDescendingYearRelease} checked={descendingYearRelease}/>
+    Descending Year Release
     </label>
 
 

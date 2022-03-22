@@ -25,12 +25,13 @@ export default function Main() {
     <nav id="movie-list">
         {popularMovies.map((movie, index) => (
             <Link to={`/movie/${movie.id}`}>
-             <figure key={index}>
+             <figure key={index} id='figure'>
              <div id='figure-image'>
              <img src={movie.image} alt={movie.fullTitle} />
              </div>
-             <figcaption>
-               <p>{movie.fullTitle} ImDb:{movie.imDbRating}</p>
+             <figcaption id='figure-text'>
+               <h5>{movie.fullTitle}</h5>
+               <h6> ImDb:{movie.imDbRating}</h6>
              </figcaption>
            </figure>
            </Link>

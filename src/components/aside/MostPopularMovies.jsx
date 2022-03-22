@@ -4,29 +4,29 @@ import { Link } from "react-router-dom"
 import  {FilterArrAZ} from "./filters/FilterAZ"
 import  {FilterAscendingImdbRating} from "./filters/FilterAscendingImdbRating"
 import  {FilterDescendingImdbRating} from "./filters/FilterDescendingImdbRating"
+import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
+import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
 
 export default function MostPopularMovies(props) {
-  const { mostPopularMovies, filterAZ, ascendingImdbRating, descendingImdbRating } = props
+  const { mostPopularMovies, filterAZ, ascendingImdbRating, descendingImdbRating, ascendingYearRelease, descendingYearRelease } = props
   let movieArray = mostPopularMovies
 
   useEffect(() => {
   movieArray = mostPopularMovies
   }, [mostPopularMovies])
 
+
   if(filterAZ === true) {
     movieArray = FilterArrAZ(mostPopularMovies)
-  } if(filterAZ === false && ascendingImdbRating === true) {
+  } if(ascendingImdbRating === true) {
     movieArray = FilterAscendingImdbRating(mostPopularMovies)
-  } if (filterAZ === true && ascendingImdbRating === false) {
-    movieArray = FilterArrAZ(mostPopularMovies)
-  } if(filterAZ === true && ascendingImdbRating === true) {
-    FilterArrAZ(FilterAscendingImdbRating(mostPopularMovies))
-  } if(filterAZ === false && ascendingImdbRating === false) {
-    movieArray = mostPopularMovies
-  }if(descendingImdbRating === true) {
+  } if(descendingImdbRating === true) {
     movieArray = FilterDescendingImdbRating(mostPopularMovies)
+  } if(ascendingYearRelease === true) {
+    movieArray = FilterAscendingYearRelease(movieArray)
+  } if(descendingYearRelease === true) {
+    movieArray = FilterDescendingYearRelease(movieArray)
   }
-
 
 
 
