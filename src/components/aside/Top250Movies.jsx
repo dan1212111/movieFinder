@@ -1,32 +1,31 @@
 import React from 'react'
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import  {FilterArrAZ} from "./filters/FilterAZ"
+import  {FilterDescendingImdbRating} from "./filters/FilterDescendingImdbRating"
 
 export default function Top250Movies(props) {
-  const { top250Movies, filterAZ } = props
-let movieArray = top250Movies
+  const { top250Movies, filterAZ, descendingImdbRating } = props
+  let movieArray = top250Movies
+
+  useEffect(() => {
+  movieArray = top250Movies
+  }, [top250Movies])
+
 
   if(filterAZ === true) {
-    FilterArrAZ()
-  } if (filterAZ === false) {
+    movieArray = FilterArrAZ(top250Movies)
+  } if(filterAZ === false && descendingImdbRating === true) {
+    movieArray = FilterDescendingImdbRating(top250Movies)
+  } if (filterAZ === true && descendingImdbRating === false) {
+    movieArray = FilterArrAZ(top250Movies)
+  } if(filterAZ === true && descendingImdbRating === true) {
+    FilterArrAZ(FilterDescendingImdbRating(top250Movies))
+  } if(filterAZ === false && descendingImdbRating === false) {
     movieArray = top250Movies
   }
-  
 
-  function FilterArrAZ() {
-   const movieList = [...movieArray]
-    movieList.sort(function(a, b) {
-      let movieA= a.title.toLowerCase(), movieB= b.title.toLowerCase()
-      if(movieA < movieB)
-      return -1
-      if (movieA > movieB)
-      return 1
-      return 0
-    })
-    movieArray = movieList
-  }
 
-  
 
   return (
     <>
