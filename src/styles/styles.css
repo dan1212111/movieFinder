@@ -6,6 +6,7 @@ html {
     box-sizing: inherit;
   }
 
+  /*---- BODY TEMPLATE ----*/
 body {
     height: 100vh;
     width: 100vw;
@@ -14,18 +15,21 @@ body {
                     1fr      4.5fr;
 }
 
-/*---- main section ----*/
 main {
     grid-area: main;
 }
 
-/* main-header */
-    #main-navigation {
+aside {
+    grid-area: aside;
+}
+
+/* ----- MAIN HEADER ----- */
+#main-navigation {
     display: flex;
-    position: -webkit-sticky;  /* for Safari */
-    position: stickyz;
-    top: 0;
-    align-self: flex-start;
+     position: -webkit-sticky;  
+     position: stickyz;
+     top: 0;
+    align-self: flex-start; 
     width: 100%;
     height: 80px;
     background: rgba(0,0,0,0.5);
@@ -43,7 +47,9 @@ main {
     border: 1px solid white;
 }   
 
+/* ----- MAIN CONTENT ----- */
 #movie-list {
+    height: 100vh;
     overflow:auto;
     scroll-behavior: smooth;
     display: flex;
@@ -59,7 +65,7 @@ figure {
     display: grid;
     grid-template-rows: 220px 50px ;
     background-color:#f6f6f5;
-
+    
 }
 
 #figure-image {
@@ -70,30 +76,119 @@ figure {
     display: flex;
     justify-content: center;
 }
-#figure-image img{
+
+#figure-image img {
     width: 80%;
     height: 100%;
     object-fit: fill;
 }
 
-#figure-text {
+.figcaption {
     width: 100%; 
     height: 100%;
-    display:flex;
-    flex-flow: column wrap;
+    display: flex;
     justify-content: center;
+   
 } 
 
-#left-side-navigation {
-    grid-area: aside;
+.figureImdbRating {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 235px
 }
 
-/* --- styles --- */
-figcaption  {
+/* ---- ASIDE NAVIGATION ---- */
+#left-side-navigation {
+    border: 1px solid black;
+    height:100vh;
+    display: grid;
+    grid-template-rows: 80px 1fr 1fr;
+}
+
+.filter_Big_Container1 {
+    border: 1px solid black;
+    display: flex;
+    flex-direction:column;
+
+}
+.filter_Big_Container1 button{
+    height: 100px;
+    width: 100%;
+}
+
+
+
+
+.filter_Big_Container2 {
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------ styles ------ */
+.figcaption  {
     color: #70757a;
-    font-size: 12px
+    font-size: 18px;
+    font-weight: bold;
 }
 
 a:Link {
     text-decoration: none;
+}
+
+.figureRating p {
+    background-color:white;
+    font-size: 18px;
+}
+
+.filter_Big_Container1 button {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+
+
+/* -- HOVER EFFECTS -- */
+.imageOptions {
+    visibility: hidden;
+    background-color: rgba(137, 147, 150, 0.75);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.imageOptionsLeftSide,
+.imageOptionsRightSide {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageOptionsLeftSide {
+    border-right: 2px solid black;
+}
+
+
+#figure:hover .imageOptions {
+    visibility: visible;
+    cursor: pointer;
 }
