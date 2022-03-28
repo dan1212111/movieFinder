@@ -1,4 +1,4 @@
-import { Link, Routes, Route } from "react-router-dom"
+import { Link, Routes, Route, useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 // import "./styles/styles.css"
 import "/Users/daniel/my-app/src/styles/aside.css"
@@ -19,6 +19,28 @@ function App() {
   const [boxOffice, setBoxOffice] = useState(null)
   const [mostPopularMovies, setMostPopularMovies] = useState(null)
   const [filter, setFilter] = useState(null)
+  const location = useLocation()
+  const [visibilityAZ, setVisibilityAZ] = useState("visible")
+  const [visibilityAscRating, setVisibilityAscRating] = useState("visible")
+  const [visibilityDescRating, setVisibilityDescRating] = useState("visible")
+  const [visibilityAscYear, setVisibilityAscYear] = useState("visible")
+  const [visibilityDescYear, setVisibilityDescYear] = useState("visible")
+  const [visibilityNone, setVisibilityNone] = useState("visible")
+
+
+console.log(location.pathname)
+
+/* FILTER VISIBILITY */
+if(location.pathname === "/movies/fTop250Movies") {
+  // visibilityAscRating = ("")
+//  setVisibilityAscRating("hidden")
+console.log("works")
+}
+
+// MAYBE WRITE THIS AS A RETURN STATEMENT IN REACT
+
+// location()
+
 
   useEffect(() => {
     if(!top250Movies) {
@@ -163,7 +185,7 @@ function App() {
           </Link>
         </div>
         <div className="filter_Big_Container2">
-          <label>
+          <label style={{visibility: visibilityAZ}}>
             <input
               type="radio"
               name="filterAZ"
@@ -173,8 +195,8 @@ function App() {
               checked={filter === "filterAZ"}
             />
             Filter A-z
-          </label>
-          <label>
+          </label >
+          <label style={{visibility: visibilityAscRating}}>
             <input
               type="radio"
               name="filterAscendingImdbRating"
@@ -185,7 +207,7 @@ function App() {
             />
             Ascending Imdb Rating
           </label>
-          <label>
+          <label style={{visibility: visibilityDescRating}}>
             <input
               type="radio"
               name="filterDescendingImdbRating"
@@ -196,7 +218,7 @@ function App() {
             />
             Descending Imdb Rating
           </label>
-          <label>
+          <label style={{visibility: visibilityAscYear}}>
             <input
               type="radio"
               name="filterAscendingYearRelease"
@@ -207,7 +229,7 @@ function App() {
             />
             Ascending Year Release
           </label>
-          <label>
+          <label style={{visibility: visibilityDescYear}}>
             <input
               type="radio"
               name="filterDescendingYearRelease"
@@ -218,7 +240,7 @@ function App() {
             />
             Descending Year Release
           </label>
-          <label>
+          <label style={{visibility: visibilityNone}}>
             <input
               type="radio"
               name="filterNone"

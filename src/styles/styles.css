@@ -10,6 +10,8 @@ html {
 body {
     height: 100vh;
     width: 100vw;
+    margin:0%;
+    padding:0%;
     display: grid;
     grid-template: "aside    main"   1fr/
                     1fr      4.5fr;
@@ -43,7 +45,7 @@ aside {
 #main-navigation ul li {
     color: white;
     display:inline;
-    /* padding: 2rem; */
+    padding: 2rem;
     border: 1px solid white;
 }   
 
@@ -65,6 +67,7 @@ figure {
     display: grid;
     grid-template-rows: 220px 50px ;
     background-color:#f6f6f5;
+    position: relative;
     
 }
 
@@ -93,10 +96,21 @@ figure {
 
 .figureImdbRating {
     display: flex;
-    justify-content: flex-end;
-    position: relative;
-    height: 235px
+    justify-self: flex-start;
+    align-self: start;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
 }
+
+.figureRating {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
 
 /* ---- ASIDE NAVIGATION ---- */
 #left-side-navigation {
@@ -117,21 +131,9 @@ figure {
     width: 100%;
 }
 
-
-
-
 .filter_Big_Container2 {
     border: 1px solid black;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -167,11 +169,11 @@ a:Link {
 .imageOptions {
     visibility: hidden;
     background-color: rgba(137, 147, 150, 0.75);
-    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 82%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    position: absolute;
 
 }
 .imageOptionsLeftSide,
