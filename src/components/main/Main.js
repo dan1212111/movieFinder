@@ -7,12 +7,29 @@ import { Link } from "react-router-dom"
 import { handleTrailer } from "./handleTrailer"
 import { ReactComponent as Bookmark } from "./bookmark.svg"
 import Aside from "/Users/danielmccarthy/movieFinder/src/aside.jsx"
+import  {FilterArrAZ} from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterAZ.js"
+import  {FilterDescendingImdbRating} from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterDescendingImdbRating.js"
+import  {FilterAscendingYearRelease} from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterAscendingYearRelease.js"
+import  {FilterDescendingYearRelease} from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterDescendingYearRelease.js"
 
-export default function Main() {
+export default function Main(props) {
   const [popularMovies, setPopularMovies] = useState(null)
   const [check, setCheck] = useState(false);
-  // const navigate = useNavigate()
-  // When the use clicked - triggeres event param find trailer link and then sent you to it. This
+  const { top250Movies,  } = props
+  const [filter, setFilter] = useState(null)
+  let movieArray = top250Movies
+
+  if(filter === "filterAZ") {
+    movieArray = FilterArrAZ(movieArray)
+  } if(filter === "descendingImdbRating") {
+    movieArray = FilterDescendingImdbRating(movieArray)
+  } if(filter === "ascendingYearRelease") {
+    movieArray = FilterAscendingYearRelease(movieArray)
+  } if(filter === "descendingYearRelease") {
+    movieArray = FilterDescendingYearRelease(movieArray)
+  } if(filter === "none") {
+    movieArray = top250Movies
+  }
 
   useEffect(() => {
     if (!popularMovies) {
@@ -41,10 +58,10 @@ export default function Main() {
 
   return (
     <>
-      < Aside />
+      < Aside setFilter={setFilter}/>
     <main>
     <nav id="movie-list">
-      {popularMovies.map((movie, index) => (
+      {movieArray.map((movie, index) => (
         <figure key={index} id="figure">
           {/* Code underneath works wells */}
           <div id="figure-image">

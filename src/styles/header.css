@@ -14,24 +14,20 @@
 }
   
 .main-header-navigation {
-    display: flex;
-    justify-content: flex-end;
+    width: 26%;
   }
 
   .main-header-navigation li {
-    margin-right: 20px;
+    /* margin-right: 20px; */
     /* margin-top: 20%; */
     border: 2px solid white;
-    padding: 28px
-  }
-  
-  /*#main-header ul li {
-    color: white;
-    display: inline;
-    padding: 2rem; */
-    /* border: 1px solid white; */
-  /* } */
+    display: flex;
+    justify-content: center;
+    padding: 28px;
+    width: 70%;
+    margin-left: 26%;
 
+  }
 
   /* STYLES */
 .main-header-navigation h3{

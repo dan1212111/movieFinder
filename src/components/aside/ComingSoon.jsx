@@ -60,7 +60,7 @@ export default function ComingSoon(props) {
               </button>
               <Link to={`/movie/${movie.id}`}>
                 <div className="imageOptionsRightSide">
-                  <h3>About</h3>
+                  <h3>More Info</h3>
                 </div>
               </Link>
             </div>

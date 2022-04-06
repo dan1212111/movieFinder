@@ -11,6 +11,7 @@ import ComingSoon from "./components/aside/ComingSoon"
 import Top250TVs from "./components/aside/Top250TVs"
 import BoxOffice from "./components/aside/BoxOffice"
 import MostPopularMovies from "./components/aside/MostPopularMovies"
+import WatchList from "/Users/danielmccarthy/movieFinder/src/components/main/WatchList.jsx"
 
 function App() {
   const [top250Movies, setTop250Movies] = useState(null)
@@ -76,9 +77,9 @@ function App() {
   return (
     <body>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main  top250Movies={top250Movies} />} />
           <Route path="/movie/:id" element={<ViewMovie />} />
-          <Route path="/myMovies" element={<MyMovies />} />
+          <Route path="/myMovies" element={<WatchList />} />
           <Route
             path="/movies/fTop250Movies"
             element={

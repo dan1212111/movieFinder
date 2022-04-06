@@ -60,7 +60,7 @@ export default function Top250Movies(props) {
               <button onClick= {() => {handleTrailer(movie.id)}}><div className="imageOptionsLeftSide"><h3>Trailer</h3></div></button>
               <Link to={`/movie/${movie.id}`}>
                 <div className="imageOptionsRightSide">
-                  <h3>About</h3>
+                  <h3>More Info</h3>
                 </div>
               </Link>
             </div>

@@ -45,7 +45,7 @@ export default function ViewMovie() {
   if (!movieInfo) {
     return <p>Loading...</p>
   }
-
+  console.log(movieInfo)
   return (
     <>
       <div className="movie_Container">
@@ -54,6 +54,12 @@ export default function ViewMovie() {
         </div>
         <div className="movieDescription">
           {movieInfo.plot}
+          <br></br>
+          <br></br>
+          <br></br>
+          Rating (Imdb): {movieInfo.imDbRating}
+          <br></br>
+          <p>{movieInfo.contentRating}</p>
           <Button
             imDbRating={movieInfo.imDbRating}
             fullTitle={movieInfo.fullTitle}
@@ -62,21 +68,16 @@ export default function ViewMovie() {
             id={movieInfo.id}
           />
         </div>
-
         <div className="moviePoster">
           <img src={movieInfo.image} alt={movieInfo.title} />
         </div>
-        <div className="movieRating">
-          <div className="imDbRating">ImDbRating:{movieInfo.imDbRating}</div>
-          <div className="contentRating">{movieInfo.contentRating}</div>
-        </div>
         <div className="movieCast">
-          <h4>STARCAST:</h4>
+          <h3>STARCAST:</h3>
           <div className="movieCastBigContainer">
             {findStarListInfo().map((star) => (
               <div className="movieCast_Container">
                 <div className="movieCastImage">
-                  {/* <img src={star.image} alt={star.name}></img> */}
+                  <img src={star.image} alt={star.name}></img>
                 </div>
                 <div className="movieCastName">
                   <h4>{star.asCharacter}</h4>
@@ -87,24 +88,18 @@ export default function ViewMovie() {
           </div>
         </div>
       </div>
-      {/* <header>
-    <nav id="main-headerViewMovie">
-      <div className= "main-header-navigation">
-      <ul>
-        <Link to="/myMovies">
-          <li><h3>WatchList</h3></li>
-        </Link>
-      </ul>
-      </div>
-    </nav>
-  </header> */}
       <header>
         <nav id="main-headerViewMovie">
-          <div className="main-header-navigation">
+          <div className="main-header-ViewMovieNavigation">
             <ul>
               <Link to="/myMovies">
                 <li>
                   <h3>WatchList</h3>
+                </li>
+              </Link>
+              <Link to="/">
+                <li>
+                  <h3>Home</h3>
                 </li>
               </Link>
             </ul>
