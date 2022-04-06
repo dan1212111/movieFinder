@@ -1,0 +1,46 @@
+#main-header {
+     /* position: -webkit-sticky;  
+    position: sticky;  */
+    position: absolute; 
+    top: 0;
+    width: 82%;
+    height: 82px; 
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: flex-end;
+     justify-self: flex-end; 
+    align-items: flex-start;
+    
+}
+  
+.main-header-navigation {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .main-header-navigation li {
+    margin-right: 20px;
+    /* margin-top: 20%; */
+    border: 2px solid white;
+    padding: 28px
+  }
+  
+  /*#main-header ul li {
+    color: white;
+    display: inline;
+    padding: 2rem; */
+    /* border: 1px solid white; */
+  /* } */
+
+
+  /* STYLES */
+.main-header-navigation h3{
+  color: white;
+  /* font-size: 28px; */
+  font-family: "Orbitron", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+}
+
+.main-header-navigation ul {
+  list-style: none;
+}

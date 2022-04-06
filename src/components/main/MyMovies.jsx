@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "/Users/daniel/my-app/src/styles/myMovie.css"
+import "/Users/danielmccarthy/movieFinder/src/styles/myMovie.css"
 import { useState, useEffect } from "react"
 
 export default function MyMovies() {
