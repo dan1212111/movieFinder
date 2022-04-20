@@ -1,5 +1,3 @@
-/** @format */
-
 import React from "react"
 import { Link, useLocation } from "react-router-dom"
 import { useState } from "react"
@@ -73,7 +71,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "filterAZ"}
               />
-              A-z
+              <h3>A-z</h3>
             </label>
             <label style={{ display: visibilityAscRating }}>
               <input
@@ -84,7 +82,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "ascendingImdbRating"}
               />
-              Asc Rating
+              <h3>Asc Rating</h3>
             </label>
             <label style={{ display: visibilityDescRating }}>
               <input
@@ -95,7 +93,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "descendingImdbRating"}
               />
-              Desc Rating
+              <h3>Desc Rating</h3>
             </label>
             <label style={{ display: visibilityAscYear }}>
               <input
@@ -106,7 +104,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "ascendingYearRelease"}
               />
-              Asc Year
+              <h3>Asc Year</h3>
             </label>
             <label style={{ display: visibilityDescYear }}>
               <input

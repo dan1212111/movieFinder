@@ -1,10 +1,8 @@
-/** @format */
-
 import React from "react"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "/Users/danielmccarthy/movieFinder/src/styles/viewMovie.css"
-import "/Users/danielmccarthy/movieFinder/src/styles/headerViewMovie.css"
+import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
 import Button from "./Button.jsx"
 import { Link } from "react-router-dom"
 
@@ -89,8 +87,8 @@ export default function ViewMovie() {
         </div>
       </div>
       <header>
-        <nav id="main-headerViewMovie">
-          <div className="main-header-ViewMovieNavigation">
+        <nav id="main-header">
+          <div className="main-header-navigation">
             <ul>
               <Link to="/myMovies">
                 <li>

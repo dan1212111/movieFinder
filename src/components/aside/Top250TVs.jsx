@@ -6,8 +6,12 @@ import  {FilterDescendingImdbRating} from "./filters/FilterDescendingImdbRating"
 import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
 import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
 import {handleTrailer} from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
-import Aside from "/Users/danielmccarthy/movieFinder/src/aside.jsx"
+import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import Aside from "./aside.jsx"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
+import { Checkbox } from 'pretty-checkbox-react';
+
+import '@djthoms/pretty-checkbox'
 
 export default function Top250TVs(props) {
   const { top250TVs } = props
@@ -28,16 +32,6 @@ export default function Top250TVs(props) {
     movieArray = top250TVs
   }
 
-  function handleClick(event) {
-    const inputValue = event
-    if(inputValue === false) {
-      event = 'true'
-    } if (inputValue === true) {
-      event = 'false'
-    }
-    setCheck(inputValue)
-    console.log(inputValue)
-}
 
   return (
     <>
@@ -63,13 +57,9 @@ export default function Top250TVs(props) {
               </Link>
             </div>
           </div>
-          <input
-              type="checkbox"
-              value="false"
-              onChange={(e) => handleClick(e.target.checked)}
-              id="input_star"
-              name="starInput"
-            ></input>
+          <div className="heartIcon">
+            <Checkbox  shape="round" style={{ fontSize: "40px" }} className="mdiHeartIcon" onChange={(e) => handleClick(e, movie)} icon={<i className="mdi mdi-heart-outline"  />} animation="jelly" />
+            </div>
         </figure>
       ))}
     </nav>

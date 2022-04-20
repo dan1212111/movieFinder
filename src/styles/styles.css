@@ -1,5 +1,6 @@
 /** @format */
 
+
 html {
   box-sizing: border-box;
 }
@@ -137,12 +138,9 @@ figure {
     cursor: pointer; */
 }
 
-#input_star {
+.heartIcon{
   position: absolute;
-  height: 60px;
-  width: 30px;
-  transform: translate(-1px, -15px);
-  border: 5px solid black;
+  transform: translate(0px, 3px);
 }
 
 /* ------ styles ------ */
@@ -177,21 +175,15 @@ a:link {
 }
 
 
-
-/* #left_side_star,
-#right_side_star{
-    fill:#E2574C
-}
-#left_icon_star,
-#right_icon_star {
-    fill:#EFC75E
-} */
-
 /* -- CLICK EFFECTS -- */
-/* svg a:active #right_icon_star,
-svg a:active #left_icon_star{
-    fill: blue
-} */
+
+.mdi.mdi-heart-outline {
+  background-color:black;
+  color: #f4c518;
+}
+
+
+
 
 /* -- HOVER EFFECTS -- */
 .imageOptions {
@@ -246,5 +238,6 @@ svg a:active #left_icon_star{
 #input_star:hover {
   cursor: pointer;
 }
+
 
 
