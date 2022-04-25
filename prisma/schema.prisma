@@ -15,21 +15,20 @@ model User {
   id        Int      @id @default(autoincrement())
   username  String   @unique
   password  String
-  movies    Movie[]
+  watchlist Movie[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Movie {
   id         Int      @id @default(autoincrement())
-  fullTitle  String? 
+  fullTitle  String?
   title      String?
   year       String?
-  movieId    String   @unique
+  imDbId     String   @unique
   imDbRating String?
   image      String?
-  userId     Int
-  user       User     @relation(fields: [userId], references: [id])
+  users      User[]
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

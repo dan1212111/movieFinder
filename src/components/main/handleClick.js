@@ -50,7 +50,7 @@ function handleClick(event, movie) {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
       body: JSON.stringify({
-        movieId: movie.id,
+        id: movie.id,
       }),
     }
 
