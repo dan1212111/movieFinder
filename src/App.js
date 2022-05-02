@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate, Outlet } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "/Users/danielmccarthy/movieFinder/src/styles/aside.css"
 import Main from "./components/main/Main"
@@ -72,9 +72,10 @@ function App() {
   return (
     <body>
       <Routes>
-        <Route path="/" element={<Main top250Movies={top250Movies} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route element={<AuthenticateUser />} >
+        <Route path="/" element={<Main top250Movies={top250Movies} />} />
         <Route path="/movie/:id" element={<ViewMovie />} />
         <Route path="/myMovies" element={<WatchList />} />
         <Route
@@ -97,9 +98,22 @@ function App() {
           path="/movies/fMostPopularMovies"
           element={<MostPopularMovies mostPopularMovies={mostPopularMovies} />}
         />
+         </Route>
       </Routes>
     </body>
   )
 }
+function isLoggedIn() {
+  const loadedToken = localStorage.getItem("token");
+  return !(loadedToken === "");
+}
 
 export default App
+
+const AuthenticateUser = ({ children, redirectPath = "/login" }) => {
+  if (!isLoggedIn()) {
+    return <Navigate to={redirectPath} replace />;
+  }
+
+  return <Outlet />;
+};

@@ -2,20 +2,20 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    
   }
+
+#root body {
+    background-color: black;
+}
 
 body { 
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #181a1b;
-}
+ }
 
-.form {
-    background-color: red;
-    height: 50%;
-    width: 30%;
-    display: flex;
-    flex-flow: column wrap;
-    gap: 10%;
+
+ .user-form {
+    background-color: white
 }

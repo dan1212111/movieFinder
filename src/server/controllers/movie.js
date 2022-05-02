@@ -4,7 +4,6 @@ const prisma = new PrismaClient()
 const addToWatchlist = async (req, res) => {
   const { fullTitle, title, year, movieId, imDbRating, image } = req.body
 
-
   const updatedWatchlist = await prisma.user.update({
     where: {
       id: req.userId,
@@ -30,25 +29,30 @@ const addToWatchlist = async (req, res) => {
   res.json({ data: updatedWatchlist })
 }
 
-// get userId from jwt
-// get user from prisma using userId
-// get movieId from req
-// get movie from prima using movieID
-// connect movie to users watchlist
-
-//where
-//where
-//update (connect)
-
-//Delete (remove)
-
 const deleteFromWatchlist = async (req, res) => {
   const { movieId } = req.body
-
-  const movies = await prisma.movie.delete({
+  const movies = await prisma.user.update({
     where: {
-      movieId: movieId,
-      // userId: req.userId
+      id: req.userId,
+    },
+    data: {
+      watchlist: {
+        disconnect: {
+          imDbId: movieId,
+        },
+      }
+    },
+  })
+  res.json({ data: movies })
+}
+
+const getAllMovies = async (req, res) => {
+  const movies = await prisma.user.findUnique({
+    where: {
+      id: req.userId,
+    },
+    include: {
+      watchlist: true,
     },
   })
   res.json({ data: movies })
@@ -57,4 +61,5 @@ const deleteFromWatchlist = async (req, res) => {
 module.exports = {
   addToWatchlist,
   deleteFromWatchlist,
+  getAllMovies,
 }

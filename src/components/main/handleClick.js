@@ -1,4 +1,5 @@
 function handleClick(event, movie) {
+
     if (event.target.checked === true) {
       addToWatchlist(movie)
     }
@@ -50,7 +51,7 @@ function handleClick(event, movie) {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
       body: JSON.stringify({
-        id: movie.id,
+        movieId: movie.id,
       }),
     }
 
