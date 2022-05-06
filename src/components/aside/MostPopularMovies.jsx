@@ -8,7 +8,7 @@ import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
 import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
 import {handleTrailer} from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
 import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
-import Header from "/Users/danielmccarthy/movieFinder/src/header/header.jsx"
+import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
 import Aside from "./aside.jsx"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
 import { Checkbox } from 'pretty-checkbox-react';

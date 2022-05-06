@@ -5,15 +5,18 @@ import "../styles/header.css"
 
 export default function Header() {
   const location = useLocation()
-  const [linkButton, setLinkButton] = useState('/watchlist')
-  const [buttonName, setButtonName] = useState('Watchlist')
+  const [linkButton, setLinkButton] = useState("/watchlist")
+  const [buttonName, setButtonName] = useState("Watchlist")
 
   useEffect(() => {
-    if (location.pathname.includes('/about-movie')) {
-      setLinkButton('/')
-      setButtonName('Home')
+    if (
+      location.pathname.includes("/about-movie") ||
+      location.pathname.includes("/watchlist")
+    ) {
+      setLinkButton("/")
+      setButtonName("Home")
     }
-  },[location])
+  }, [location])
 
   return (
     <header>

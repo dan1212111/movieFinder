@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import "/Users/danielmccarthy/movieFinder/src/styles/watchlist.css"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
 import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import Header from "../../header/Header"
 import { handleTrailer } from "./handleTrailer"
 import { useState, useEffect } from "react"
 import { Checkbox } from "pretty-checkbox-react"
@@ -163,24 +164,7 @@ export default function Watchlist() {
           ))}
         </nav>
       </div>
-      <header>
-        <nav id="main-header">
-          <div className="main-header-navigation">
-            <ul>
-              <Link to="/">
-                <li>
-                  <h3>Home</h3>
-                </li>
-              </Link>
-              <Link to="/login">
-                <li>
-                  <h3>LogOut</h3>
-                </li>
-              </Link>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <Header />
     </div>
   )
 }

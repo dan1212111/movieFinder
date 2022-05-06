@@ -8,8 +8,6 @@
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
   overflow-y: auto;
-  padding-left: 10%;
-  padding-right: 10%;
   height: 100vh;
   width: 100vw;
   display: grid;

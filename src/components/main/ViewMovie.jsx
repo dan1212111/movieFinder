@@ -2,7 +2,7 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "/Users/danielmccarthy/movieFinder/src/styles/viewMovie.css"
-import Header from "/Users/danielmccarthy/movieFinder/src/header/header"
+import Header from "/Users/danielmccarthy/movieFinder/src/header/Header"
 import Button from "./Button.jsx"
 import { Link } from "react-router-dom"
 
