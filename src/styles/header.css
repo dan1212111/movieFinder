@@ -1,46 +1,73 @@
 #main-header {
-     /* position: -webkit-sticky;  
-    position: sticky;  */
-    position: absolute; 
-    top: 0;
-    width: 82%;
-    height: 82px; 
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: flex-end;
-     justify-self: flex-end; 
-    align-items: flex-start;
-    
+  position: -webkit-sticky;
+  position: sticky;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 82px;
+  display: flex;
+  justify-content: flex-end;
 }
-  
+
 .main-header-navigation {
   width: 30%;
 }
 
 .main-header-navigation ul {
-  display: flex;
-  flex-direction: row; 
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
- }
+}
 
- .main-header-navigation li {
-   border: 2px solid white;
-   padding: 28px;
-   display: flex;
-   justify-content: center;
+.main-header-navigation li {
+  min-width: 0;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- }
+/* STYLES */
+#main-header {
+  background: rgba(0, 0, 0, 0.5);
+}
 
- /* STYLES */
- .main-header-navigation h3{
- color: white;
- /* font-size: 28px; */
- font-family: "Orbitron", sans-serif;
- src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+.main-header-navigation h3 {
+  color: white;
+  font-size: 2rem;
+  font-family: "Orbitron", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 }
 
 .main-header-navigation ul {
- list-style: none;
+  list-style: none;
+}
+
+.main-header-navigation li {
+  border: 2px solid white;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1379px) {
+  .main-header-navigation h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-header-navigation h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .main-header-navigation h3 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .main-header-navigation h3 {
+    font-size: 0.8rem;
+  }
 }

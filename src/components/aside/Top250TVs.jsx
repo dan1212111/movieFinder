@@ -7,6 +7,7 @@ import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
 import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
 import {handleTrailer} from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
 import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import Header from "/Users/danielmccarthy/movieFinder/src/header/header.jsx"
 import Aside from "./aside.jsx"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
 import { Checkbox } from 'pretty-checkbox-react';
@@ -50,7 +51,7 @@ export default function Top250TVs(props) {
             </div>
             <div className="imageOptions">
               <button onClick= {() => {handleTrailer(movie.id)}}><div className="imageOptionsLeftSide"><h3>Trailer</h3></div></button>
-              <Link to={`/movie/${movie.id}`}>
+              <Link to={`/about-movie/${movie.id}`}>
                 <div className="imageOptionsRightSide">
                   <h3>More Info</h3>
                 </div>
@@ -63,17 +64,7 @@ export default function Top250TVs(props) {
         </figure>
       ))}
     </nav>
-    <header>
-    <nav id="main-header">
-      <div className= "main-header-navigation">
-      <ul>
-        <Link to="/myMovies">
-          <li><h3>WatchList</h3></li>
-        </Link>
-      </ul>
-      </div>
-    </nav>
-  </header>
+<Header />
     </main>
     </>
   )

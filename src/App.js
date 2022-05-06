@@ -8,7 +8,7 @@ import ComingSoon from "./components/aside/ComingSoon"
 import Top250TVs from "./components/aside/Top250TVs"
 import BoxOffice from "./components/aside/BoxOffice"
 import MostPopularMovies from "./components/aside/MostPopularMovies"
-import WatchList from "/Users/danielmccarthy/movieFinder/src/components/main/WatchList.jsx"
+import WatchList from "./components/main/Watchlist.jsx"
 import Login from "/Users/danielmccarthy/movieFinder/src/client/components/Login.jsx"
 import Register from "/Users/danielmccarthy/movieFinder/src/client/components/Register.jsx"
 
@@ -76,8 +76,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route element={<AuthenticateUser />} >
         <Route path="/" element={<Main top250Movies={top250Movies} />} />
-        <Route path="/movie/:id" element={<ViewMovie />} />
-        <Route path="/myMovies" element={<WatchList />} />
+        <Route path="/about-movie/:id" element={<ViewMovie />} />
+        <Route path="/watchlist" element={<WatchList />} />
         <Route
           path="/movies/fTop250Movies"
           element={<Top250Movies top250Movies={top250Movies} />}
@@ -104,8 +104,8 @@ function App() {
   )
 }
 function isLoggedIn() {
-  const loadedToken = localStorage.getItem("token");
-  return !(loadedToken === "");
+  const loadedToken = localStorage.getItem("jwt");
+  return !(loadedToken === "" || loadedToken === null);
 }
 
 export default App

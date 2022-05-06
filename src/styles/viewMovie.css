@@ -10,8 +10,8 @@
     overflow:auto;
     height: 100vh;
     width: 100vw;
-    padding-left: 5%;
-    padding-right: 5%;
+    /* padding-left: 5%;
+    padding-right: 5%; */
     display: grid;
     grid-template:   "poster      title"     1fr
                     "poster     description"  2fr

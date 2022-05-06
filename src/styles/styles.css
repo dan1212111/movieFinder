@@ -25,6 +25,7 @@ body {
 
 main {
   grid-area: main;
+  position: relative;
 }
 
 
@@ -33,40 +34,18 @@ main {
 
 }
 
-/* ----- MAIN HEADER ----- */
-/* #main-header {
-  display: flex;
-  position: -webkit-sticky;
-  position: stickyz;
-  top: 0;
-  align-self: flex-start;
-  width: 100%;
-  height: 30px;
-  background: rgba(0, 0, 0, 0.5);
-  align-items: center;
-}
-
-#main-header ul {
-  width: 600px;
-}
-
-#main-header ul li {
-  color: white;
-  display: inline;
-  padding: 2rem;
-  /* border: 1px solid white; */
-
 
 /* ----- MAIN CONTENT ----- */
 #movie-list {
   height: 100vh;
   padding-top: 80px;
-  overflow: auto;
+  overflow-y: auto;
   scroll-behavior: smooth;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 15px;
+  
 }
 
 figure {

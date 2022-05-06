@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FilterArrAZ } from "./filters/FilterAZ"
 import { FilterAscendingYearRelease } from "./filters/FilterAscendingYearRelease"
+import Header from "/Users/danielmccarthy/movieFinder/src/header/header.jsx"
 import { FilterDescendingYearRelease } from "./filters/FilterDescendingYearRelease"
 import { handleTrailer } from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
@@ -51,7 +52,7 @@ export default function ComingSoon(props) {
               >
                  <div className="imageOptionsLeftSide"><h3>Trailer</h3></div>
               </button>
-              <Link to={`/movie/${movie.id}`}>
+              <Link to={`/about-movie/${movie.id}`}>
                 <div className="imageOptionsRightSide">
                   <h3>More Info</h3>
                 </div>
@@ -64,17 +65,7 @@ export default function ComingSoon(props) {
         </figure>
       ))}
     </nav>
-    <header>
-    <nav id="main-header">
-      <div className= "main-header-navigation">
-      <ul>
-        <Link to="/myMovies">
-          <li><h3>WatchList</h3></li>
-        </Link>
-      </ul>
-      </div>
-    </nav>
-  </header>
+<Header/>
     </main>
     </>
   )

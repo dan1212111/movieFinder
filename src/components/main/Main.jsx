@@ -1,6 +1,6 @@
 import React from "react"
 import "/Users/danielmccarthy/movieFinder/src/styles/styles.css"
-import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
+import Header from "/Users/danielmccarthy/movieFinder/src/header/header.jsx"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { handleTrailer } from "./handleTrailer"
@@ -114,7 +114,7 @@ export default function Main(props) {
                       <h3>Trailer</h3>
                     </div>
                   </button>
-                  <Link to={`/movie/${movie.id}`}>
+                  <Link to={`/about-movie/${movie.id}`}>
                     <div className="imageOptionsRightSide">
                       <h3>More Info</h3>
                     </div>
@@ -122,14 +122,14 @@ export default function Main(props) {
                 </div>
                 <div className="heartIcon">
                   <Checkbox
-                    checked = {checked}
+                    // checked = {checked}
                     shape="round"
                     style={{ fontSize: "40px" }}
                     className="mdiHeartIcon"
                     onChange={(e) => {handleClick(e, movie); toggleChecked() }}
                     icon={<i className="mdi mdi-heart-outline" />}
                     animation="jelly"
-                    onLoad = {getChecked(movie)}
+                    // onLoad = {getChecked(movie)}
                   />
                   {/* {getChecked(movie)} */}
                 </div>
@@ -137,24 +137,7 @@ export default function Main(props) {
             </figure>
           ))}
         </nav>
-        <header>
-          <nav id="main-header">
-            <div className="main-header-navigation">
-              <ul>
-                <Link to="/myMovies">
-                  <li>
-                    <h3>WatchList</h3>
-                  </li>
-                </Link>
-                <Link to="/login">
-                  <li>
-                    <h3>LogOut</h3>
-                  </li>
-                </Link>
-              </ul>
-            </div>
-          </nav>
-        </header>
+        <Header />
       </main>
     </>
   )

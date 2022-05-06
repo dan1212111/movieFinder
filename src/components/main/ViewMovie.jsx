@@ -2,7 +2,7 @@ import React from "react"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "/Users/danielmccarthy/movieFinder/src/styles/viewMovie.css"
-import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
+import Header from "/Users/danielmccarthy/movieFinder/src/header/header"
 import Button from "./Button.jsx"
 import { Link } from "react-router-dom"
 
@@ -85,25 +85,8 @@ export default function ViewMovie() {
             ))}
           </div>
         </div>
+        <Header />
       </div>
-      <header>
-        <nav id="main-header">
-          <div className="main-header-navigation">
-            <ul>
-              <Link to="/myMovies">
-                <li>
-                  <h3>WatchList</h3>
-                </li>
-              </Link>
-              <Link to="/">
-                <li>
-                  <h3>Home</h3>
-                </li>
-              </Link>
-            </ul>
-          </div>
-        </nav>
-      </header>
     </>
   )
 }
