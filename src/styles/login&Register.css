@@ -1,0 +1,9 @@
+body {
+    background-color: #181a1b;
+}
+
+.signInTxt,
+.signUpTxt {
+    font-family: "Orbitron", sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+}

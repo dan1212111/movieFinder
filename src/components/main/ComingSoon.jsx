@@ -1,36 +1,34 @@
-import React from 'react'
-import { useState, useEffect } from "react"
+import React from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import  {FilterArrAZ} from "./filters/FilterAZ"
-import  {FilterDescendingImdbRating} from "./filters/FilterDescendingImdbRating"
-import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
-import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
-import {handleTrailer} from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
-import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import { FilterArrAZ } from "../sideBar/filters/FilterAZ"
+import { FilterAscendingYearRelease } from "../sideBar/filters/FilterAscendingYearRelease"
 import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
-import Aside from "./aside.jsx"
+import { FilterDescendingYearRelease } from "../sideBar/filters/FilterDescendingYearRelease"
+import { handleTrailer } from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
+import Aside from "../sideBar/SideBar.jsx"
 import { Checkbox } from 'pretty-checkbox-react';
+import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
 
 import '@djthoms/pretty-checkbox'
 
-export default function Top250TVs(props) {
-  const { top250TVs } = props
-  const [check, setCheck] = useState(false);
+export default function ComingSoon(props) {
+  const { comingSoon } = props
   const [filter, setFilter] = useState(null)
-  let movieArray = top250TVs
+  let movieArray = comingSoon
 
-
-  if(filter === "filterAZ") {
+  if (filter === "filterAZ") {
     movieArray = FilterArrAZ(movieArray)
-  } if (filter === "descendingImdbRating") {
-    movieArray = FilterDescendingImdbRating(movieArray)
-  } if(filter === "ascendingYearRelease") {
+  }
+  if (filter === "ascendingYearRelease") {
     movieArray = FilterAscendingYearRelease(movieArray)
-  } if(filter === "descendingYearRelease") {
+  }
+  if (filter === "descendingYearRelease") {
     movieArray = FilterDescendingYearRelease(movieArray)
-  } if(filter === "none") {
-    movieArray = top250TVs
+  }
+  if (filter === "none") {
+    movieArray = comingSoon
   }
 
 
@@ -46,11 +44,14 @@ export default function Top250TVs(props) {
           </div>
           <div className="figcaption">{movie.fullTitle}</div>
           <div className="figureImdbRating">
-            <div className="figureRating">
-              <p>⭐️{movie.imDbRating}</p>
-            </div>
             <div className="imageOptions">
-              <button onClick= {() => {handleTrailer(movie.id)}}><div className="imageOptionsLeftSide"><h3>Trailer</h3></div></button>
+              <button
+                onClick={() => {
+                  handleTrailer(movie.id)
+                }}
+              >
+                 <div className="imageOptionsLeftSide"><h3>Trailer</h3></div>
+              </button>
               <Link to={`/about-movie/${movie.id}`}>
                 <div className="imageOptionsRightSide">
                   <h3>More Info</h3>
@@ -64,7 +65,7 @@ export default function Top250TVs(props) {
         </figure>
       ))}
     </nav>
-<Header />
+<Header/>
     </main>
     </>
   )

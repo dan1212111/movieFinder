@@ -4,11 +4,11 @@ import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { handleTrailer } from "./handleTrailer"
-import Aside from "../aside/aside.jsx"
-import { FilterArrAZ } from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterAZ.js"
-import { FilterDescendingImdbRating } from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterDescendingImdbRating.js"
-import { FilterAscendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterAscendingYearRelease.js"
-import { FilterDescendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/aside/filters/FilterDescendingYearRelease.js"
+import Aside from "../sideBar/SideBar.jsx"
+import { FilterArrAZ } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterAZ.js"
+import { FilterDescendingImdbRating } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterDescendingImdbRating.js"
+import { FilterAscendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterAscendingYearRelease.js"
+import { FilterDescendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterDescendingYearRelease.js"
 import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
 import { Checkbox, useCheckboxState } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
@@ -91,6 +91,7 @@ export default function Main(props) {
 
   return (
     <>
+    <div className="body">
       <Aside setFilter={setFilter} />
       <main>
         <nav id="movie-list">
@@ -139,6 +140,7 @@ export default function Main(props) {
         </nav>
         <Header />
       </main>
+      </div>
     </>
   )
 }

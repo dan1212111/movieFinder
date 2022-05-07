@@ -1,0 +1,123 @@
+  #left-side-navigation {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 80px 1.5fr 1fr;
+  }
+
+  .movie-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* CONTAINER 1 */
+  .filter_Big_Container1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .filter_Big_Container1 button {
+    width: 100%;
+    height: 100%;
+  }
+
+  .filter_Big_Container1 a {
+    width: 100%;
+    height: 100%;
+  }
+
+   /* CONTAINER 2 */
+  .filter_Big_Container2 {
+    display: grid;
+    grid-template-rows: 0.2fr 1fr;
+    padding-top: 20%;
+    padding-left: 30px;
+  }
+
+  .filterTxt {
+    padding-bottom: 40px;
+  }
+
+  .filterOptions {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .filterOptions h3 {
+    display: inline-block;
+    padding-left: 3px;
+  }
+
+  .filterOptions>label {
+    flex: 50%;
+  }
+
+
+  /* STYLES  */
+  .movie-title h2,
+  .filterTxt h3,
+  .filter_Big_Container1 button,
+  .filterOptions label h3 {
+    font-family: 'Orbitron', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap")
+  }
+
+  .movie-title h2,
+  .filterTxt h3 {
+    color: #f4c518;
+  }
+
+  .movie-title,
+  .filterTxt h3,
+  .filter_Big_Container1 button,
+  .filter_Big_Container2,
+  .filterOptions {
+    background-color: black;
+  }
+
+  #left-side-navigation {
+    background-color: white;
+  }
+
+  .filter_Big_Container1 button,
+  .filterOptions label h3 {
+    color: white;
+  }
+
+  .filter_Big_Container1 {
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+  }
+
+  .movie-title h2 {
+    font-size: 3rem;
+  }
+
+  .filter_Big_Container1 button h4 {
+    font-size: 2rem;
+  }
+
+  .filterTxt h3{
+    font-size: 1.5rem;
+  }
+
+  .filter_Big_Container1 button {
+    border: 1px solid black;
+  }
+
+  .filterOptions label h3{
+    font-size: 1.2rem;
+  }
+
+  
+  /* HOVER EFFECTS */
+  .filter_Big_Container1 button:hover,
+  .filter_Big_Container2 label input:hover {
+    cursor: pointer;
+  }

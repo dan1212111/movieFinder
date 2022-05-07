@@ -1,14 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import  {FilterArrAZ} from "./filters/FilterAZ"
-import  {FilterDescendingImdbRating} from "./filters/FilterDescendingImdbRating"
-import  {FilterAscendingYearRelease} from "./filters/FilterAscendingYearRelease"
-import  {FilterDescendingYearRelease} from "./filters/FilterDescendingYearRelease"
+import  {FilterArrAZ} from "../sideBar/filters/FilterAZ"
+import  {FilterDescendingImdbRating} from "../sideBar/filters/FilterDescendingImdbRating"
+import  {FilterAscendingYearRelease} from "../sideBar/filters/FilterAscendingYearRelease"
+import  {FilterDescendingYearRelease} from "../sideBar/filters/FilterDescendingYearRelease"
 import {handleTrailer} from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
 import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
 import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
-import Aside from "./aside.jsx"
+import Aside from "../sideBar/SideBar.jsx"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
 import { Checkbox } from 'pretty-checkbox-react';
 

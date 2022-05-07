@@ -1,11 +1,11 @@
 import React from "react"
-import UserFormLog from "./UserFormLog"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import LoginForm from "./LoginForm"
 
 export default function Login() {
-  const [loginResponse, setLoginResponse] = useState()
-  let navigate = useNavigate();
+  const [loginError, setLoginError] = useState()
+  let navigate = useNavigate()
 
   const handleLogin = async ({ username, password }) => {
     const options = {
@@ -21,20 +21,22 @@ export default function Login() {
 
     fetch("http://localhost:4000/user/login", options)
       .then((res) => res.json())
-      .then((json) => {
-        setLoginResponse("Logged In with token:" + json.data)
-        localStorage.setItem("jwt", json.data)
-        if(json.data !== undefined) {
-          console.log(loginResponse)
+      .then((res) => {
+        setLoginError(res.error)
+        localStorage.setItem("jwt", res.data)
+        if (res.data !== undefined) {
           navigate("/")
         }
+      })
+      .catch((err) => {
+        const errorMessage = err
+        console.log("Server error.", errorMessage)
       })
   }
 
   return (
     <>
-      <UserFormLog handleSubmit={handleLogin} loginResponse={loginResponse}/>
-      {/* <p>{loginResponse}</p> */}
+      <LoginForm handleSubmit={handleLogin} loginError={loginError} />
     </>
   )
 }

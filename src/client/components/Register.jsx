@@ -1,10 +1,10 @@
 import React from 'react'
-import UserFormReg from "./UserFormReg"
+import RegisterForm from "./RegForm"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 export default function Register() {
-    const [registeredResponse, setRegisteredResponse] = useState()
+    const [registerError, setRegisterError] = useState()
     let navigate = useNavigate();
 
     const handleRegister = async ({ username, password }) => {
@@ -20,21 +20,22 @@ export default function Register() {
         }
         fetch("http://localhost:4000/user/register", options)
           .then((res) => res.json())
-          .then((json) => {
-            setRegisteredResponse(
-              "You have successfully registered with:" + json.data.username
-            )
-            navigate("/login") }
-          )
-          .catch(() => {
-            setRegisteredResponse("Server error")
+          .then((res) => {
+            setRegisterError(res.error)
+            if (res.data !== undefined) {
+              navigate("/login")
+            }
+          })
+          .catch((err) => {
+            const errorMessage = err
+            console.log("Server error.", errorMessage)
           })
       }
 
   return (
     <>
-    <UserFormReg handleSubmit={handleRegister} />
-    <p>{registeredResponse}</p>
+    <RegisterForm handleSubmit={handleRegister} registerError={registerError}/>
+    <p>{registerError}</p>
   </>
   )
 }

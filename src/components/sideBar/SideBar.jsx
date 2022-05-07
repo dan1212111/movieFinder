@@ -1,9 +1,9 @@
 import React from "react"
-import { Link, useLocation } from "react-router-dom"
 import { useState } from "react"
-import "/Users/danielmccarthy/movieFinder/src/styles/styles.css"
+import { Link, useLocation } from "react-router-dom"
+import "../../styles/sideBar.css"
 
-export default function Aside(props) {
+export default function SideBar(props) {
   const [filterValue, setFilterValue] = useState(null)
   const location = useLocation()
   let visibilityAZ = "visible"
@@ -39,27 +39,39 @@ export default function Aside(props) {
   return (
     <>
       <aside id="left-side-navigation">
-        <div className="title">Movie Finder</div>
+        <div className="movie-title">
+          <h2>Movie Finder</h2>
+        </div>
         <div className="filter_Big_Container1">
           <Link to="/movies/fBoxOffice">
-            <button>BoxOffice</button>
+            <button>
+              <h4>BoxOffice</h4>
+            </button>
           </Link>
           <Link to="/movies/fComingSoon">
-            <button>Coming Soon</button>
+            <button>
+              <h4>Coming Soon</h4>
+            </button>
           </Link>
           <Link to="/movies/fTop250Movies">
-            <button>Top250Movies</button>
+            <button>
+              <h4>Top250Movies</h4>
+            </button>
           </Link>
           <Link to="/movies/fTop250TVs">
-            <button>Top250TVs</button>
+            <button>
+              <h4>Top250TVs</h4>
+            </button>
           </Link>
           <Link to="/movies/fMostPopularMovies">
-            <button>MostPopularMovies</button>
+            <button>
+              <h4>MostPopularMovies</h4>
+            </button>
           </Link>
         </div>
         <div className="filter_Big_Container2">
           <div className="filterTxt">
-            <h3>Filters:</h3>
+            <h3>Optional Filters:</h3>
           </div>
           <div className="filterOptions">
             <label style={{ display: visibilityAZ }}>
@@ -71,7 +83,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "filterAZ"}
               />
-              <h3>A-z</h3>
+              <h3>A-Z</h3>
             </label>
             <label style={{ display: visibilityAscRating }}>
               <input
@@ -115,7 +127,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "descendingYearRelease"}
               />
-              Desc Year
+              <h3>Desc Year</h3>
             </label>
             <label style={{ display: visibilityNone }}>
               <input
@@ -126,7 +138,7 @@ export default function Aside(props) {
                 onChange={handleFilter}
                 checked={filterValue === "none"}
               />
-              None
+              <h3>None</h3>
             </label>
           </div>
         </div>

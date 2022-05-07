@@ -1,10 +1,10 @@
 import React from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { FilterArrAZ } from "./filters/FilterAZ"
+import { FilterArrAZ } from "../sideBar/filters/FilterAZ"
 import { handleTrailer } from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
 import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
-import Aside from "./aside"
+import Aside from "../sideBar/SideBar"
 import { Checkbox } from "pretty-checkbox-react"
 import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
 
