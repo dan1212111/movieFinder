@@ -2,17 +2,18 @@ import React from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FilterArrAZ } from "../sideBar/filters/FilterAZ"
-import { handleTrailer } from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
+import { handleTrailer } from "./handlers/handleTrailer.js"
 import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
 import Aside from "../sideBar/SideBar"
 import { Checkbox } from "pretty-checkbox-react"
-import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import { handleClick } from "./handlers/handleClick.js"
+
 
 import "@djthoms/pretty-checkbox"
 
 export default function BoxOffice(props) {
   const { boxOffice } = props
-  const [check, setCheck] = useState(false)
+  const [check, setCheck] = useState(true)
   let movieArray = boxOffice
   const [filter, setFilter] = useState(null)
 
@@ -22,10 +23,9 @@ export default function BoxOffice(props) {
   if (filter === "none") {
     movieArray = boxOffice
   }
-  console.log(movieArray)
 
   return (
-    <>
+      <div className="body">
       <Aside setFilter={setFilter} />
       <main>
         <nav id="movie-list">
@@ -68,6 +68,6 @@ export default function BoxOffice(props) {
         </nav>
         <Header />
       </main>
-    </>
+      </div>
   )
 }

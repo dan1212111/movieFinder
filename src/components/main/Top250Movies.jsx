@@ -5,8 +5,8 @@ import  {FilterArrAZ} from "../sideBar/filters/FilterAZ"
 import  {FilterDescendingImdbRating} from "../sideBar/filters/FilterDescendingImdbRating"
 import  {FilterAscendingYearRelease} from "../sideBar/filters/FilterAscendingYearRelease"
 import  {FilterDescendingYearRelease} from "../sideBar/filters/FilterDescendingYearRelease"
-import {handleTrailer} from "/Users/danielmccarthy/movieFinder/src/components/main/handleTrailer.js"
-import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import { handleTrailer } from "./handlers/handleTrailer.js"
+import { handleClick } from "./handlers/handleClick.js"
 import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
 import Aside from "../sideBar/SideBar.jsx"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
@@ -36,7 +36,8 @@ export default function Top250Movies(props) {
 
 
   return (
-    <>
+
+        <div className="body">
     < Aside setFilter={setFilter} />
     <main>
     <nav id="movie-list">
@@ -67,6 +68,6 @@ export default function Top250Movies(props) {
     </nav>
 <Header />
     </main>
-    </>
+    </div>
   )
 }

@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "react-router-dom"
 import "/Users/danielmccarthy/movieFinder/src/styles/watchlist.css"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
-import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import { handleClick } from "./handlers/handleClick.js"
 import Header from "../../header/Header"
-import { handleTrailer } from "./handleTrailer"
+import { handleTrailer } from "./handlers/handleTrailer"
 import { useState, useEffect } from "react"
 import { Checkbox } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
@@ -87,7 +87,7 @@ export default function Watchlist() {
                       <h3>Trailer</h3>
                     </div>
                   </button>
-                  <Link to={`/movie/${movie.imDbId}`}>
+                  <Link to={`/about-movie/${movie.imDbId}`}>
                     <div className="imageOptionsRightSide">
                       <h3>More Info</h3>
                     </div>

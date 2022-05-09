@@ -1,15 +1,14 @@
 import React from "react"
-import "/Users/danielmccarthy/movieFinder/src/styles/styles.css"
 import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { handleTrailer } from "./handleTrailer"
+import { handleTrailer } from "./handlers/handleTrailer"
 import Aside from "../sideBar/SideBar.jsx"
 import { FilterArrAZ } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterAZ.js"
 import { FilterDescendingImdbRating } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterDescendingImdbRating.js"
 import { FilterAscendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterAscendingYearRelease.js"
 import { FilterDescendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterDescendingYearRelease.js"
-import { handleClick } from "/Users/danielmccarthy/movieFinder/src/components/main/handleClick.js"
+import { handleClick } from "./handlers/handleClick.js"
 import { Checkbox, useCheckboxState } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
 
@@ -21,7 +20,7 @@ export default function Main(props) {
   const [watchlist, setWatchlist] = useState(null)
   let movieArray = top250Movies
   let imDbId = []
-  const checkbox = useCheckboxState()
+  // const checkbox = useCheckboxState()
 
   if (filter === "filterAZ") {
     movieArray = FilterArrAZ(movieArray)
@@ -82,6 +81,7 @@ export default function Main(props) {
         // console.log(checkbox)
         // checkbox = {checked: "true"}
         console.log("works")
+        // Checkbox = true
       }
     // }
   }
@@ -90,7 +90,6 @@ export default function Main(props) {
 
 
   return (
-    <>
     <div className="body">
       <Aside setFilter={setFilter} />
       <main>
@@ -132,7 +131,7 @@ export default function Main(props) {
                     animation="jelly"
                     // onLoad = {getChecked(movie)}
                   />
-                  {/* {getChecked(movie)} */}
+                  {getChecked(movie)}
                 </div>
               </div>
             </figure>
@@ -141,6 +140,5 @@ export default function Main(props) {
         <Header />
       </main>
       </div>
-    </>
   )
 }

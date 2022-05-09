@@ -25,12 +25,16 @@ export default function Header() {
           <ul>
             <li>
               <Link to={linkButton}>
-                <h3>{buttonName}</h3>
+                <button>
+                  <h3>{buttonName}</h3>
+                </button>
               </Link>
             </li>
             <li>
               <Link to="/login">
-                <h3>LogOut</h3>
+                <button>
+                  <h3>LogOut</h3>
+                </button>
               </Link>
             </li>
           </ul>

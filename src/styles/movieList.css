@@ -1,62 +1,51 @@
-html {
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
 
 /*---- BODY TEMPLATE ----*/
 .body {
   height: 100vh;
   width: 100vw;
-  margin: 0%;
-  padding: 0%;
   display: grid;
   grid-template:
-    "aside    main" 1fr/
-    1fr 4.5fr;
+    "aside    main" 1fr/ 1fr 4.5fr;
 }
 
 main {
-  grid-area: main;
   position: relative;
 }
 
-
 #left-side-navigation {
   grid-area: aside;
-
 }
 
 
-/* ----- MAIN CONTENT ----- */
+/* ----- CONTENT ----- */
 #movie-list {
   grid-area: main;
+  padding-left: 1%;
+  padding-top: 83px;
   height: 100vh;
-  padding-top: 80px;
   overflow-y: auto;
   scroll-behavior: smooth;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  align-content: flex-start;
   gap: 15px;
-  
 }
 
-figure {
+#figure {
   width: 200px;
   height: 270px;
   display: grid;
   grid-template-rows: 220px 50px;
-  background-color: #f6f6f5;
   position: relative;
 }
 
 #figure-image {
-  background-color: #f6f6f5;
   height: 100%;
   width: 100%;
   object-fit: fill;
@@ -94,44 +83,39 @@ figure {
   justify-content: flex-end;
 }
 
-/* svg { 
-   position: absolute;
-   height: 70px;
-   width:60px;
-   display: flex;
-   align-self: flex-start;
-   justify-content: flex-start;
-   transform: translate(-1px, -5px);
-   
-} */
-
-.btn_starIcon {
-  /* position: relative; */
-  /* position: relative; */
-  height: 70px;
-  width: 60px;
-  /* background-color: rgba(0, 0, 0, 0.0);
-    border: none;
-    cursor: pointer; */
-}
-
-.heartIcon{
+.heartIcon {
   position: absolute;
   transform: translate(0px, 3px);
 }
+
 
 /* ------ styles ------ */
 main {
   background-color: #181a1b;
 }
 
+#figure,
+#figure-image,
+.figureRating p {
+  background-color: #f6f6f5;
+}
+
+.figcaption,
+.figureRating p,
+.imageOptionsLeftSide h3,
+.imageOptionsRightSide h3 {
+  font-family: "Orbitron", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+}
+
+.figcaption,
+.filter_Big_Container1 button {
+  font-weight: bold;
+}
+
 .figcaption {
   color: #70757a;
   font-size: 18px;
-  font-weight: bold;
-  font-family: "Orbitron", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
-  
 }
 
 a:link {
@@ -140,26 +124,19 @@ a:link {
 
 .figureRating p {
   border: 1px solid #767676;
-  background-color: white;
   font-size: 20px;
-  font-family: "Orbitron", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 }
 
 .filter_Big_Container1 button {
-  font-weight: bold;
   font-size: 20px;
 }
 
 
 /* -- CLICK EFFECTS -- */
-
 .mdi.mdi-heart-outline {
-  background-color:black;
+  background-color: black;
   color: #f4c518;
 }
-
-
 
 
 /* -- HOVER EFFECTS -- */
@@ -172,6 +149,7 @@ a:link {
   grid-template-columns: 1fr 1fr;
   position: absolute;
 }
+
 .imageOptionsLeftSide,
 .imageOptionsRightSide {
   height: 100%;
@@ -189,8 +167,6 @@ a:link {
 
 .imageOptionsLeftSide h3,
 .imageOptionsRightSide h3 {
-  font-family: "Orbitron", sans-serif;
-  src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
   font-size: 15px;
 }
 
@@ -215,6 +191,3 @@ a:link {
 #input_star:hover {
   cursor: pointer;
 }
-
-
-

@@ -121,3 +121,7 @@
   .filter_Big_Container2 label input:hover {
     cursor: pointer;
   }
+
+  .filter_Big_Container1 button:hover {
+    color: #f4c518;
+  }

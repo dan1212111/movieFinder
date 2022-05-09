@@ -2,7 +2,7 @@ import { Routes, Route, Navigate, Outlet } from "react-router-dom"
 import { useState, useEffect } from "react"
 import "/Users/danielmccarthy/movieFinder/src/styles/sideBar.css"
 import Main from "./components/main/Main"
-import ViewMovie from "./components/main/ViewMovie"
+import AboutMovie from "./components/aboutMovie/AboutMovie"
 import Top250Movies from "./components/main/Top250Movies"
 import ComingSoon from "./components/main/ComingSoon"
 import Top250TVs from "./components/main/Top250TVs"
@@ -11,6 +11,7 @@ import MostPopularMovies from "./components/main/MostPopularMovies"
 import WatchList from "./components/main/Watchlist.jsx"
 import Login from "/Users/danielmccarthy/movieFinder/src/client/components/Login.jsx"
 import Register from "/Users/danielmccarthy/movieFinder/src/client/components/Register.jsx"
+import "./styles/movieList.css"
 
 function App() {
   const [top250Movies, setTop250Movies] = useState(null)
@@ -76,7 +77,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route element={<AuthenticateUser />} >
         <Route path="/" element={<Main top250Movies={top250Movies} />} />
-        <Route path="/about-movie/:id" element={<ViewMovie />} />
+        <Route path="/about-movie/:id" element={<AboutMovie />} />
         <Route path="/watchlist" element={<WatchList />} />
         <Route
           path="/movies/fTop250Movies"
