@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from "react"
+import "../../styles/addMovieButton.css"
 
-export default function Button(props) {
+export default function AddMovieButton(props) {
     const [check, setCheck] = useState(true);
     const [buttonText, setButtonText] = useState("ADD TO MY MOVIES");
     const [movieId, setMovieId] = useState(null)
@@ -9,10 +10,10 @@ export default function Button(props) {
 function handleClick(event) {
     setCheck((prevCheck) => !prevCheck)
     if(check === false) {
-        setButtonText("ADD TO MY MOVIES")
+        setButtonText("ADD TO WATCHLIST")
         deleteMovie()
     } if(check === true){
-        setButtonText("ADDED TO MY MOVIES")
+        setButtonText("REMOVE FROM WATCHLIST")
         addMovie()
     }
 }
@@ -55,7 +56,7 @@ function deleteMovie() {
 
   return (
     <button className="btn-primary" onClick={handleClick} check={check}>
-    {buttonText}
+    <h3>{buttonText}</h3>
   </button>
   )
 }

@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "/Users/danielmccarthy/movieFinder/src/styles/watchlist.css"
-import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
-import { handleClick } from "./handlers/handleClick.js"
-import Header from "../../header/Header"
-import { handleTrailer } from "./handlers/handleTrailer"
+import "../../styles/watchlist.css"
+import "../../styles/header.css"
+import { handleClick } from "../main/handlers/handleClick.js"
+import Header from "../header/Header"
+import { handleTrailer } from "../main/handlers/handleTrailer"
 import { useState, useEffect } from "react"
 import { Checkbox } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
@@ -26,8 +26,6 @@ export default function Watchlist() {
 
   function formatDateToString() {
     const d = new Date()
-    // var dd = (d.getDate() < 10 ? "0" : "") + d.getDate()
-    // var MM = (d.getMonth() + 1 < 10 ? "0" : "") + (d.getMonth() + 1)
     var yyyy = d.getFullYear()
     return yyyy
   }
@@ -61,12 +59,14 @@ export default function Watchlist() {
 
   return (
     <div className="main_Container">
-      <div className="main_container1">
+      <div className="main_container1-watchlist">
         <div className="headerTitle">
           <h2>MY MOVIES</h2>
+        </div>
+        <div className="upcoming-release-txt">
           <h3>UPCOMING RELEASE:</h3>
         </div>
-        <nav id="movie-list-main">
+        <nav id="movie-list-watchlist">
           {filterBeforeReleaseDate().map((movie, index) => (
             <figure key={index} id="figure">
               <div id="figure-image">
@@ -113,11 +113,11 @@ export default function Watchlist() {
           ))}
         </nav>
       </div>
-      <div className="main_container2">
-        <div className="headerTitle2">
+      <div className="main_container2-watchlist">
+        <div className="out-now-title">
           <h3>OUT NOW:</h3>
         </div>
-        <nav id="movie-list-main2">
+        <nav id="movie-list-watchlist2">
           {filterAfterReleaseDate().map((movie, index) => (
             <figure key={index} id="figure">
               <div id="figure-image">

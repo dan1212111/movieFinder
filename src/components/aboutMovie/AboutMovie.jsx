@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom"
 import IconButton from "@mui/material/IconButton"
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined"
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined"
-import Header from "../../header/Header"
-import Button from "../main/Button.jsx"
+import Header from "../header/Header"
+import AddMovieButton from "./AddMovieButton.jsx"
 import "../../styles/aboutMovie.css"
 
 export default function ViewMovie() {
@@ -45,7 +45,7 @@ export default function ViewMovie() {
   function getNextPosterImage() {
     console.log(count)
     if (moviePosterImage.length !== 0) {
-      if (count < moviePosterImage.length-1) {
+      if (count < moviePosterImage.length - 1) {
         let newCount = count + 1
         setCount(newCount)
         let nextMoviePoster = moviePosterImage[newCount]
@@ -104,7 +104,7 @@ export default function ViewMovie() {
 
   return (
     <div className="movie_Container">
-      <div className="moviePoster">
+      <div className="movie-poster">
         <IconButton aria-label="arrow left" style={arrowLeftbtn}>
           <ArrowLeftOutlinedIcon
             style={arrowLeft}
@@ -120,30 +120,35 @@ export default function ViewMovie() {
         </IconButton>
       </div>
 
-      <div className="movieTitle">
+      <div className="movie-name">
         <h3>{movieInfo.fullTitle}</h3>
       </div>
-      <div className="movieDescription">
-        {movieInfo.plot}
-        Rating (Imdb): {movieInfo.imDbRating}
-        <p>{movieInfo.contentRating}</p>
-        <Button
-          imDbRating={movieInfo.imDbRating}
-          fullTitle={movieInfo.fullTitle}
-          image={movieInfo.image}
-          releaseDate={movieInfo.releaseDate}
-          id={movieInfo.id}
-        />
+      <div className="movie-description">
+        <div className="movie-plot">
+          {movieInfo.plot}
+          <br></br> <br></br>
+          Rating (Imdb): {movieInfo.imDbRating}
+          <h4>{movieInfo.contentRating}</h4>
+        </div>
+        <div className="movie-button-watchlist">
+          <AddMovieButton
+            imDbRating={movieInfo.imDbRating}
+            fullTitle={movieInfo.fullTitle}
+            image={movieInfo.image}
+            releaseDate={movieInfo.releaseDate}
+            id={movieInfo.id}
+          />
+        </div>
       </div>
-      <div className="movieCast">
+      <div className="movie-cast">
         <h3>STARCAST:</h3>
-        <div className="movieCastBigContainer">
+        <div className="movie-cast_Big_Container">
           {findStarListInfo().map((star) => (
-            <div className="movieCast_Container">
-              <div className="movieCastImage">
+            <div className="movie-cast_Container">
+              <div className="movie-cast-image">
                 <img src={star.image} alt={star.name}></img>
               </div>
-              <div className="movieCastName">
+              <div className="movie-cast-name">
                 <h4>{star.asCharacter}</h4>
                 <h5>{star.name}</h5>
               </div>

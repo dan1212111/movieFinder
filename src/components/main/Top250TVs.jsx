@@ -7,7 +7,7 @@ import { FilterAscendingYearRelease } from "../sideBar/filters/FilterAscendingYe
 import { FilterDescendingYearRelease } from "../sideBar/filters/FilterDescendingYearRelease"
 import { handleTrailer } from "./handlers/handleTrailer.js"
 import { handleClick } from "./handlers/handleClick.js"
-import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
+import Header from "../header/Header.jsx"
 import Aside from "../sideBar/SideBar.jsx"
 import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
 import { Checkbox } from "pretty-checkbox-react"

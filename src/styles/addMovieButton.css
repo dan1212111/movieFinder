@@ -1,0 +1,19 @@
+.movie-button-watchlist button {
+    width: 20rem;
+    height: 5rem;
+    border-radius: 2em;
+    border: groove 1em
+}
+
+
+/* STYLES */
+.btn-primary h3 {
+    font-size: 1rem;
+    color: #f4c518;
+    font-family: 'Orbitron', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap")
+}
+
+button {
+    background-color: black;
+}

@@ -1,116 +1,114 @@
 .movie_Container {
     text-rendering: optimizeSpeed;
     scroll-behavior: smooth;
-    overflow:auto;
+    overflow: auto;
     height: 100vh;
     width: 100vw;
-    /* padding-left: 5%;
-    padding-right: 5%; */
     display: grid;
-    grid-template:   "poster      title"     1fr
-                    "poster     description"  2fr
-                    "poster        cast"      2fr/
-                    0.6fr         1fr;
-
+    grid-template:
+        "poster title" 0.8fr "poster  description" 2fr "poster   cast" 2fr/ 0.6fr 1fr;
 }
 
+
 /*---- POSTER ----*/
-.moviePoster{
+.movie-poster {
     grid-area: poster;
-    padding-top: 55px;
-    /* margin-right: 15px; */
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
-.moviePoster img {
-    width: 85%;
-    height: 90%;
+.movie-poster img {
+    padding-top: 3%;
+    width: 70%;
+    height: 80%;
     object-fit: fill;
-    padding-left: 0%
 }
+
 
 /*---- TITLE ----*/
-.movieTitle  {
-    padding-top: 85px;
+.movie-name {
+    grid-area: title;
+    padding-top: 15%;
+    padding-right: 5%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 
-.movieRating {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
 
 /*---- DESCRIPTION----*/
-.movieDescription {
+.movie-description {
     grid-area: description;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
 
+.movie-plot {
+    padding-right: 10vw;
+    display: flex;
+    flex-flow: row wrap;
+    align-self: center;
+    padding-top: 1%;
 }
 
 
 /*---- CAST ----*/
-
-.movieCast {
+.movie-cast {
     grid-area: cast;
     height: 100%;
     width: 100%;
     display: flex;
-    flex-flow: column wrap;
-     justify-content: flex-end; 
-
-}
-
-.movieCastBigContainer {
-    /* background-color: aqua; */
-    height: 80%;
-    width: 100%;
-    display: flex;
-    align-self: flex-end;
     flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-
 }
 
+.movie-cast_Big_Container {
+    height: 100%;
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 5%;
+}
 
-.movieCast_Container {
-    width: 150px;
-    height: 220px;
-    border: solid 1px black;
-    display:grid;
+.movie-cast h3 {
+    padding-top: 1rem;
+}
+
+.movie-cast_Container {
+    margin-top: 3%;
+    width: 12vw;
+    height: 25vh;
+    display: grid;
     grid-template-rows: 70% 30%;
-    background-color: white;
-
+    border: groove 0.5em;
+    border-radius: 15%
 }
 
-.movieCast h5 {
-    margin-bottom:10px;
-}
-
-.movieCastImage img {
+.movie-cast-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-
 }
- .movieCastName {
+
+.movie-cast-name {
     display: grid;
-    grid-template-rows: repeat(2,1fr); 
-     align-items: center; }
-
-
-.movieCastName h4, 
-.movieCastName h5 {
-    text-align: center;
-
+    width: 100%;
+    height: 100%;
+    grid-template-rows: repeat(2, 1fr);
 }
 
-/*----- BUTTON -----*/
-.btn-primary {
-    margin-top: 30px
+.movie-cast-name h4,
+.movie-cast-name h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -119,38 +117,54 @@
     background-color: #181a1b;
 }
 
-.movieDescription,
-.movieRating,
-.movieCast h3 {
+.movie-description,
+.movie-rating,
+.movie-cast h3,
+.movie-name h3,
+.movie-cast-name h4,
+.movie-cast-name h5 {
+    font-family: 'Orbitron', sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap")
+}
+
+.movie-description,
+.movie-rating,
+.movie-cast h3,
+.movie-name h3 {
     color: white;
 }
 
-.movieTitle h3 {
+.movie-name h3 {
     font-weight: bold;
-    font-size: 2.5em;
-    color: white;
+    font-size: 4rem;
 }
 
-.movieCast h4{
+.movie-plot {
+    font-size: 2rem;
+}
+
+.movie-plot h4 {
+    color: green;
+}
+
+.movie-cast h4,
+.movie-cast-name h5 {
+    font-size: 1.5em;
+}
+
+
+.movie-cast h4 {
     font-weight: bold;
-    font-size:1.5em;
 }
 
-.movieCastName h4{
-    font-size: 1.3em
+.movie-cast-name h5 {
+    font-weight: 300
 }
 
-.movieCastName h5 {
-    font-size: 1em;
-    font-weight:300
+.movie-cast h3 {
+    font-size: 3rem
 }
 
-button {
-    color: #f4c518;
-    background-color:black;
+.movie-cast_Container {
+    background-color: white;
 }
-
-.movieDescription p {
-    color: #e52629
-}
-

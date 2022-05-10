@@ -1,5 +1,5 @@
 import React from "react"
-import Header from "/Users/danielmccarthy/movieFinder/src/header/Header.jsx"
+import Header from "../header/Header.jsx"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { handleTrailer } from "./handlers/handleTrailer"
