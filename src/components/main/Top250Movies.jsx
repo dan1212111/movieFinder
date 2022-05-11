@@ -7,9 +7,9 @@ import  {FilterAscendingYearRelease} from "../sideBar/filters/FilterAscendingYea
 import  {FilterDescendingYearRelease} from "../sideBar/filters/FilterDescendingYearRelease"
 import { handleTrailer } from "./handlers/handleTrailer.js"
 import { handleClick } from "./handlers/handleClick.js"
-import Header from "../header/Header.jsx"
+import HeaderMain from "../header/HeaderMain.jsx"
 import Aside from "../sideBar/SideBar.jsx"
-import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
+import "../../styles/header.css"
 import { Checkbox } from 'pretty-checkbox-react';
 
 import '@djthoms/pretty-checkbox'
@@ -66,7 +66,7 @@ export default function Top250Movies(props) {
         </figure>
       ))}
     </nav>
-<Header />
+<HeaderMain />
     </main>
     </div>
   )

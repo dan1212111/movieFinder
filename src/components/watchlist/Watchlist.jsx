@@ -80,7 +80,7 @@ export default function Watchlist() {
                 <div className="imageOptions">
                   <button
                     onClick={() => {
-                      handleTrailer(movie.id)
+                      handleTrailer(movie.imDbId)
                     }}
                   >
                     <div className="imageOptionsLeftSide">
@@ -131,14 +131,14 @@ export default function Watchlist() {
                 <div className="imageOptions">
                   <button
                     onClick={() => {
-                      handleTrailer(movie.id)
+                      handleTrailer(movie.imDbId)
                     }}
                   >
                     <div className="imageOptionsLeftSide">
                       <h3>Trailer</h3>
                     </div>
                   </button>
-                  <Link to={`/movie/${movie.id}`}>
+                  <Link to={`/about-movie/${movie.imDbId}`}>
                     <div className="imageOptionsRightSide">
                       <h3>More Info</h3>
                     </div>

@@ -1,13 +1,13 @@
 import React from "react"
-import Header from "../header/Header.jsx"
+import HeaderMain from "../header/HeaderMain.jsx"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { handleTrailer } from "./handlers/handleTrailer"
 import Aside from "../sideBar/SideBar.jsx"
-import { FilterArrAZ } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterAZ.js"
-import { FilterDescendingImdbRating } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterDescendingImdbRating.js"
-import { FilterAscendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterAscendingYearRelease.js"
-import { FilterDescendingYearRelease } from "/Users/danielmccarthy/movieFinder/src/components/sideBar/filters/FilterDescendingYearRelease.js"
+import { FilterArrAZ } from "../../components/sideBar/filters/FilterAZ.js"
+import { FilterDescendingImdbRating } from "../../components/sideBar/filters/FilterDescendingImdbRating.js"
+import { FilterAscendingYearRelease } from "../../components/sideBar/filters/FilterAscendingYearRelease.js"
+import { FilterDescendingYearRelease } from "../../components/sideBar/filters/FilterDescendingYearRelease.js"
 import { handleClick } from "./handlers/handleClick.js"
 import { Checkbox, useCheckboxState } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
@@ -137,7 +137,7 @@ export default function Main(props) {
             </figure>
           ))}
         </nav>
-        <Header />
+        <HeaderMain />
       </main>
       </div>
   )

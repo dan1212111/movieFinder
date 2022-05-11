@@ -3,10 +3,10 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FilterArrAZ } from "../sideBar/filters/FilterAZ"
 import { FilterAscendingYearRelease } from "../sideBar/filters/FilterAscendingYearRelease"
-import Header from "../header/Header.jsx"
+import HeaderMain from "../header/HeaderMain.jsx"
 import { FilterDescendingYearRelease } from "../sideBar/filters/FilterDescendingYearRelease"
 import { handleTrailer } from "./handlers/handleTrailer.js"
-import "/Users/danielmccarthy/movieFinder/src/styles/header.css"
+import "../../styles/header.css"
 import Aside from "../sideBar/SideBar.jsx"
 import { Checkbox } from "pretty-checkbox-react"
 import { handleClick } from "./handlers/handleClick.js"
@@ -73,7 +73,7 @@ export default function ComingSoon(props) {
               </figure>
             ))}
           </nav>
-          <Header />
+          <HeaderMain />
         </main>
       </div>
   )

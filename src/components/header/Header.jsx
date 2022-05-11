@@ -9,10 +9,12 @@ export default function Header() {
   const [buttonName, setButtonName] = useState("Watchlist")
 
   useEffect(() => {
-    if (
-      location.pathname.includes("/about-movie") ||
-      location.pathname.includes("/watchlist")
-    ) {
+    console.log(location.pathname)
+    if (location.pathname.includes("/about-movie")) {
+      setLinkButton("/watchlist")
+      setButtonName("Watchlist")
+    }
+    if (location.pathname.includes("/watchlist")) {
       setLinkButton("/")
       setButtonName("Home")
     }
@@ -21,6 +23,11 @@ export default function Header() {
   return (
     <header>
       <nav id="main-header">
+        <div className="logo-header">
+          <Link to="/">
+            <h2>Movie Finder</h2>
+          </Link>
+        </div>
         <div className="main-header-navigation">
           <ul>
             <li>

@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { FilterArrAZ } from "../sideBar/filters/FilterAZ"
 import { handleTrailer } from "./handlers/handleTrailer.js"
-import Header from "../header/Header.jsx"
+import HeaderMain from "../header/HeaderMain.jsx"
 import Aside from "../sideBar/SideBar"
 import { Checkbox } from "pretty-checkbox-react"
 import { handleClick } from "./handlers/handleClick.js"
@@ -66,7 +66,7 @@ export default function BoxOffice(props) {
             </figure>
           ))}
         </nav>
-        <Header />
+        <HeaderMain />
       </main>
       </div>
   )
