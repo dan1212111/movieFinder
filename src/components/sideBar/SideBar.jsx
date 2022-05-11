@@ -31,7 +31,8 @@ export default function SideBar(props) {
   }
   if (
     location.pathname === "/movies/fTop250Movies" ||
-    location.pathname === "/movies/fTop250TVs"
+    location.pathname === "/movies/fTop250TVs" ||
+    location.pathname === "/"
   ) {
     visibilityAscRating = "none"
   }
