@@ -20,8 +20,11 @@ Run app:
 ```
 npm start
 ```
+## Preview:
 
 
+
+![MovieFinder-mainVid](https://user-images.githubusercontent.com/94029089/168121384-79425824-a8d4-4fb5-a4f9-7f2b0a7ee909.gif)
 
 
 
