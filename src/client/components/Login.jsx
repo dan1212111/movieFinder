@@ -2,6 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import LoginForm from "./LoginForm"
+const API_URL = process.env.REACT_APP_API_URL
 
 export default function Login() {
   const [loginError, setLoginError] = useState()
@@ -19,7 +20,7 @@ export default function Login() {
       }),
     }
 
-    fetch("http://localhost:4000/user/login", options)
+    fetch(`${API_URL}/user/login`, options)
       .then((res) => res.json())
       .then((res) => {
         setLoginError(res.error)

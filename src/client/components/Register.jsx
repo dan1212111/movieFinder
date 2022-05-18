@@ -2,6 +2,7 @@ import React from 'react'
 import RegisterForm from "./RegForm"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+const API_URL = process.env.REACT_APP_API_URL
 
 export default function Register() {
     const [registerError, setRegisterError] = useState()
@@ -18,7 +19,7 @@ export default function Register() {
             password: password,
           }),
         }
-        fetch("http://localhost:4000/user/register", options)
+        fetch(`${API_URL}/user/register`, options)
           .then((res) => res.json())
           .then((res) => {
             setRegisterError(res.error)

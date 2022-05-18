@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from "react"
 import "../../styles/addMovieButton.css"
+const API_URL = process.env.REACT_APP_API_URL
+
 
 export default function AddMovieButton(props) {
     const [check, setCheck] = useState(true);
@@ -32,7 +34,7 @@ function addMovie() {
             releaseDate: props.releaseDate
         })
     }
-    fetch("http://localhost:4000/movies", options)
+    fetch(`${API_URL}/movies`, options)
     .then(function(response) {
       return response.json()
     }).then(function(json) {
@@ -45,7 +47,7 @@ function deleteMovie() {
     const options = {
         method: "DELETE",
     }
-    fetch(`http://localhost:4000/movies/${movieId}`, options)  
+    fetch(`${API_URL}/movies/${movieId}`, options)  
     .then(function(response) {
         return response.json()
       }).then(function(json) {

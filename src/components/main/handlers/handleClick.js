@@ -1,3 +1,5 @@
+const API_URL = process.env.REACT_APP_API_URL
+
 function handleClick(event, movie) {
   console.log(event)
   movie.checked = !movie.checked
@@ -29,7 +31,7 @@ function handleClick(event, movie) {
       }),
     }
 
-    fetch("http://localhost:4000/movie", options)
+    fetch(`${API_URL}/movie`, options)
       .then((res) => {
         res.json().then((json) => {
           if (res.ok) {
@@ -57,7 +59,7 @@ function handleClick(event, movie) {
       }),
     }
 
-    fetch("http://localhost:4000/movie", options)
+    fetch(`${API_URL}/movie`, options)
       .then((res) => {
         res.json().then((json) => {
           if (res.ok) {

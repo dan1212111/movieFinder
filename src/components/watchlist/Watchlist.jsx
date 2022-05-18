@@ -8,6 +8,7 @@ import { handleTrailer } from "../main/handlers/handleTrailer"
 import { useState, useEffect } from "react"
 import { Checkbox } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
+const API_URL = process.env.REACT_APP_API_URL
 
 export default function Watchlist() {
   const [myMovieInfo, setMyMovieInfo] = useState("")
@@ -19,7 +20,7 @@ export default function Watchlist() {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
     }
-    fetch(`http://localhost:4000/movie`, options)
+    fetch(`${API_URL}/movie`, options)
       .then((res) => res.json())
       .then((data) => setMyMovieInfo(data.data.watchlist))
   }, [])

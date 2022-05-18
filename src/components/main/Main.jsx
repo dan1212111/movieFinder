@@ -11,6 +11,7 @@ import { FilterDescendingYearRelease } from "../../components/sideBar/filters/Fi
 import { handleClick } from "./handlers/handleClick.js"
 import { Checkbox } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
+const API_URL = process.env.REACT_APP_API_URL
 
 export default function Main(props) {
   const [popularMovies, setPopularMovies] = useState(null)
@@ -54,7 +55,7 @@ export default function Main(props) {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
     }
-    fetch(`http://localhost:4000/movie`, options)
+    fetch(`${API_URL}/movie`, options)
       .then((res) => res.json())
       .then((data) => getWatchlistMovieId(data.data.watchlist))
   }, [getWatchlistMovieId])
