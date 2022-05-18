@@ -14,7 +14,7 @@ import "@djthoms/pretty-checkbox"
 
 export default function Main(props) {
   const [popularMovies, setPopularMovies] = useState(null)
-  const [checked, setChecked] = useState(false);
+  const [check, setCheck] = useState(false);
   const { top250Movies } = props
   const [filter, setFilter] = useState(null)
   const [watchlist, setWatchlist] = useState(null)
@@ -72,21 +72,19 @@ export default function Main(props) {
     console.log(imDbId)
   }
 
-  const getChecked = (movie) =>  {
-    // for(let i = 0; i <popularMovies.length; i++) {
+
+function getChecked (movieArray) {
+    for(const movie of movieArray) {
       if (movie.id === 'tt0068646') {
-        // setChecked(true)
-      //   console.log(event)
-        // checkbox.state = true
-        // console.log(checkbox)
-        // checkbox = {checked: "true"}
-        console.log("works")
-        // Checkbox = true
+        movie.checked = 'true'
+      console.log('work', movie.checked, movie)
       }
-    // }
+    }
   }
   
-  const toggleChecked = () => setChecked(value => !value);
+  
+  
+  // const toggleChecked = () => setChecked(value => !value);
 
 
   return (
@@ -122,20 +120,20 @@ export default function Main(props) {
                 </div>
                 <div className="heartIcon">
                   <Checkbox
-                    // checked = {checked}
+                    checked = {imDbId.includes(movie.imDbId)}
                     shape="round"
                     style={{ fontSize: "40px" }}
                     className="mdiHeartIcon"
-                    onChange={(e) => {handleClick(e, movie); toggleChecked() }}
+                    onChange={(e) => {handleClick(e, movie)}}
                     icon={<i className="mdi mdi-heart-outline" />}
                     animation="jelly"
                     // onLoad = {getChecked(movie)}
                   />
-                  {getChecked(movie)}
                 </div>
               </div>
             </figure>
           ))}
+           {/* {getChecked(movieArray)} */}
         </nav>
         <HeaderMain />
       </main>

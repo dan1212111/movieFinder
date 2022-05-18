@@ -1,5 +1,6 @@
 function handleClick(event, movie) {
   console.log(event)
+  movie.checked = !movie.checked
 
     if (event.target.checked === true) {
       addToWatchlist(movie)
