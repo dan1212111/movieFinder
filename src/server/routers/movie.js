@@ -1,4 +1,4 @@
-const middleware = require("/Users/danielmccarthy/movieFinder/src/middleware/middleware.js")
+const middleware = require("../../middleware/middleware.js")
 const express = require('express');
 const {
     addToWatchlist,
