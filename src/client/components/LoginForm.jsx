@@ -124,7 +124,7 @@ export default function LoginForm({ handleSubmit, loginError }) {
           </Button>
           <Typography>
             {" "}
-            Do you have an account?
+            Don't have an account?
             <Link href="/register"> Sign Up</Link>
           </Typography>
         </Box>
