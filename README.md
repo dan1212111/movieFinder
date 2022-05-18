@@ -2,7 +2,7 @@
 
 ### A user-friendly website for film fanatics, artists and the curious. Using the ImDb database, Movie Finder allows the user to select movies or Tv shows, view info like ratings, starlist, various posters... And then add them to a watchlist. Built with React, Javascript, CSS, MUI, Node.js, Prisma ORM, Express, PostgreSQL and deployed with Heroku and Netlify.
 
-## VISIT
+## Visit
 
 www.themoviefinder.co.uk
 
