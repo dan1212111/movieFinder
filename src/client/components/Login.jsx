@@ -20,7 +20,7 @@ export default function Login() {
       }),
     }
 
-    fetch(`${API_URL}/user/login`, options)
+    fetch("Access-Control-Allow-Origin", "*", `${API_URL}/user/login`, options)
       .then((res) => res.json())
       .then((res) => {
         setLoginError(res.error)
