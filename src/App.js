@@ -1,5 +1,4 @@
-import { Routes, Route} from "react-router-dom"
-// Navigate, Outlet 
+import { Routes, Route, Navigate, Outlet} from "react-router-dom"
 import { useState, useEffect } from "react"
 import "./styles/sideBar.css"
 import Main from "./components/main/Main"
@@ -76,7 +75,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route element={<AuthenticateUser />} > */}
+        <Route element={<AuthenticateUser />} >
         <Route path="/" element={<Main top250Movies={top250Movies} />} />
         <Route path="/about-movie/:id" element={<AboutMovie />} />
         <Route path="/watchlist" element={<WatchList />} />
@@ -100,22 +99,22 @@ function App() {
           path="/movies/fMostPopularMovies"
           element={<MostPopularMovies mostPopularMovies={mostPopularMovies} />}
         />
-         {/* </Route> */}
+         </Route>
       </Routes>
     </body>
   )
 }
-// function isLoggedIn() {
-//   const loadedToken = localStorage.getItem("jwt");
-//   return !(loadedToken === "" || loadedToken === null);
-// }
+function isLoggedIn() {
+  const loadedToken = localStorage.getItem("jwt");
+  return !(loadedToken === "" || loadedToken === null);
+}
 
 export default App
 
-// const AuthenticateUser = ({ children, redirectPath = "/login" }) => {
-//   if (!isLoggedIn()) {
-//     return <Navigate to={redirectPath} replace />;
-//   }
+const AuthenticateUser = ({ children, redirectPath = "/login" }) => {
+  if (!isLoggedIn()) {
+    return <Navigate to={redirectPath} replace />;
+  }
 
-//   return <Outlet />;
-// };
+  return <Outlet />;
+};
