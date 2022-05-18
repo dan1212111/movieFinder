@@ -17,7 +17,6 @@ import "@djthoms/pretty-checkbox"
 
 export default function MostPopularMovies(props) {
   const { mostPopularMovies } = props
-  const [check, setCheck] = useState(false)
   const [filter, setFilter] = useState(null)
   let movieArray = mostPopularMovies
 

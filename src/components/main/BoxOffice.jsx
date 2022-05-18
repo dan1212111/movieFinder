@@ -13,7 +13,6 @@ import "@djthoms/pretty-checkbox"
 
 export default function BoxOffice(props) {
   const { boxOffice } = props
-  const [check, setCheck] = useState(true)
   let movieArray = boxOffice
   const [filter, setFilter] = useState(null)
 

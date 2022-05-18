@@ -1,5 +1,5 @@
 import React from "react"
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { Link } from "react-router-dom"
 import { FilterArrAZ } from "../sideBar/filters/FilterAZ"
 import { FilterDescendingImdbRating } from "../sideBar/filters/FilterDescendingImdbRating"
@@ -16,7 +16,6 @@ import "@djthoms/pretty-checkbox"
 
 export default function Top250TVs(props) {
   const { top250TVs } = props
-  const [check, setCheck] = useState(false)
   const [filter, setFilter] = useState(null)
   let movieArray = top250TVs
 

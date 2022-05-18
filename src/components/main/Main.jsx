@@ -9,15 +9,13 @@ import { FilterDescendingImdbRating } from "../../components/sideBar/filters/Fil
 import { FilterAscendingYearRelease } from "../../components/sideBar/filters/FilterAscendingYearRelease.js"
 import { FilterDescendingYearRelease } from "../../components/sideBar/filters/FilterDescendingYearRelease.js"
 import { handleClick } from "./handlers/handleClick.js"
-import { Checkbox, useCheckboxState } from "pretty-checkbox-react"
+import { Checkbox } from "pretty-checkbox-react"
 import "@djthoms/pretty-checkbox"
 
 export default function Main(props) {
   const [popularMovies, setPopularMovies] = useState(null)
-  const [check, setCheck] = useState(false);
   const { top250Movies } = props
   const [filter, setFilter] = useState(null)
-  const [watchlist, setWatchlist] = useState(null)
   let movieArray = top250Movies
   let imDbId = []
   // const checkbox = useCheckboxState()
@@ -59,12 +57,13 @@ export default function Main(props) {
     fetch(`http://localhost:4000/movie`, options)
       .then((res) => res.json())
       .then((data) => getWatchlistMovieId(data.data.watchlist))
-  }, [])
+  }, [getWatchlistMovieId])
 
   if (!popularMovies) {
     return <p>Loading...</p>
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function getWatchlistMovieId(data) {
     for (const movie of data) {
       imDbId.push(movie.imDbId)
@@ -73,14 +72,14 @@ export default function Main(props) {
   }
 
 
-function getChecked (movieArray) {
-    for(const movie of movieArray) {
-      if (movie.id === 'tt0068646') {
-        movie.checked = 'true'
-      console.log('work', movie.checked, movie)
-      }
-    }
-  }
+// function getChecked (movieArray) {
+//     for(const movie of movieArray) {
+//       if (movie.id === 'tt0068646') {
+//         movie.checked = 'true'
+//       console.log('work', movie.checked, movie)
+//       }
+//     }
+//   }
   
   
   

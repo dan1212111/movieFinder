@@ -25,8 +25,10 @@ export default function ViewMovie() {
       .then((res) => res.json())
       .then((data) => getMovieInfo(data))
     setTheMoviePosterImage(movieInfo.image)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function getMovieInfo(movieData) {
     setMovieInfo(movieData)
     setTheMoviePosterImage(movieData.image)
