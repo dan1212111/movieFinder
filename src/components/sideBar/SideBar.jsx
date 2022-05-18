@@ -95,7 +95,7 @@ export default function SideBar(props) {
                 onChange={handleFilter}
                 checked={filterValue === "ascendingImdbRating"}
               />
-              <h3>Asc Rating</h3>
+              <h3>Desc Rating</h3>
             </label>
             <label style={{ display: visibilityDescRating }}>
               <input
@@ -106,7 +106,7 @@ export default function SideBar(props) {
                 onChange={handleFilter}
                 checked={filterValue === "descendingImdbRating"}
               />
-              <h3>Desc Rating</h3>
+              <h3>Asc Rating</h3>
             </label>
             <label style={{ display: visibilityAscYear }}>
               <input
@@ -117,7 +117,7 @@ export default function SideBar(props) {
                 onChange={handleFilter}
                 checked={filterValue === "ascendingYearRelease"}
               />
-              <h3>Asc Year</h3>
+              <h3>Desc Year</h3>
             </label>
             <label style={{ display: visibilityDescYear }}>
               <input
@@ -128,7 +128,7 @@ export default function SideBar(props) {
                 onChange={handleFilter}
                 checked={filterValue === "descendingYearRelease"}
               />
-              <h3>Desc Year</h3>
+              <h3>Asc Year</h3>
             </label>
             <label style={{ display: visibilityNone }}>
               <input
