@@ -69,6 +69,7 @@ export default function Top250TVs(props) {
               </div>
               <div className="heartIcon">
                 <Checkbox
+                  checked = {movie.checked}
                   shape="round"
                   style={{ fontSize: "40px" }}
                   className="mdiHeartIcon"

@@ -75,6 +75,7 @@ export default function MostPopularMovies(props) {
               </div>
               <div className="heartIcon">
                 <Checkbox
+                  checked = {movie.checked}
                   shape="round"
                   style={{ fontSize: "40px" }}
                   className="mdiHeartIcon"
