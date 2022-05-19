@@ -32,9 +32,6 @@ export default function Top250Movies(props) {
     movieArray = top250Movies
   }
 
-  console.log(filter)
-  console.log(filter)
-
   return (
     <div className="body">
       <Aside setFilter={setFilter} />

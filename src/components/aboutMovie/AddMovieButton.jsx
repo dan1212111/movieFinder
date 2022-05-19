@@ -19,7 +19,7 @@ function handleClick(event) {
         addMovie()
     }
 }
-console.log(check)
+
 function addMovie() {
     const options = {
         method: 'POST',
@@ -39,8 +39,6 @@ function addMovie() {
       return response.json()
     }).then(function(json) {
         setMovieId(json.id)
-        console.log("Movie created")
-        console.log(movieId)
     })
 }
 function deleteMovie() {
@@ -51,7 +49,6 @@ function deleteMovie() {
     .then(function(response) {
         return response.json()
       }).then(function(json) {
-        console.log("Person deleted", json)
     })
 }
 

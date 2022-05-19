@@ -17,8 +17,6 @@ export default function MostPopularMovies(props) {
   const [filter, setFilter] = useState(null)
   let movieArray = mostPopularMovies
 
-  console.log(mostPopularMovies)
-
   if (filter === "filterAZ") {
     movieArray = FilterArrAZ(movieArray)
   }

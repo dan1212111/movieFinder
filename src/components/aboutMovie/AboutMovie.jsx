@@ -45,7 +45,6 @@ export default function ViewMovie() {
   }
 
   function getNextPosterImage() {
-    console.log(count)
     if (moviePosterImage.length !== 0) {
       if (count < moviePosterImage.length - 1) {
         let newCount = count + 1
@@ -60,7 +59,6 @@ export default function ViewMovie() {
   }
 
   function getPrevPosterImage() {
-    console.log(count)
     if (moviePosterImage.length !== 0) {
       if (count > 0) {
         let newCount = count - 1

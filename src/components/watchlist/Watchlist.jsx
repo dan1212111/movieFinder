@@ -36,8 +36,6 @@ export default function Watchlist() {
     const afterReleaseDateArr = myMovieInfo.filter(
       (movie) => movie.year < cDate
     )
-    console.log(afterReleaseDateArr)
-    console.log(cDate)
     return afterReleaseDateArr
   }
   function filterBeforeReleaseDate() {
@@ -45,11 +43,9 @@ export default function Watchlist() {
     const beforeReleaseDateArr = myMovieInfo.filter(
       (movie) => movie.year >= cDate
     )
-    console.log(beforeReleaseDateArr)
     return beforeReleaseDateArr
   }
 
-  console.log(myMovieInfo)
   if (!myMovieInfo) {
     return <p>Loading...</p>
   }

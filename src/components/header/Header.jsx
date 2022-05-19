@@ -9,7 +9,6 @@ export default function Header() {
   const [buttonName, setButtonName] = useState("Watchlist")
 
   useEffect(() => {
-    console.log(location.pathname)
     if (location.pathname.includes("/about-movie")) {
       setLinkButton("/watchlist")
       setButtonName("Watchlist")
