@@ -1,15 +1,12 @@
 import React from "react"
 import HeaderMain from "../header/HeaderMain.jsx"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { handleTrailer } from "./handlers/handleTrailer"
 import Aside from "../sideBar/SideBar.jsx"
 import { FilterArrAZ } from "../../components/sideBar/filters/FilterAZ.js"
 import { FilterDescendingImdbRating } from "../../components/sideBar/filters/FilterDescendingImdbRating.js"
 import { FilterAscendingYearRelease } from "../../components/sideBar/filters/FilterAscendingYearRelease.js"
 import { FilterDescendingYearRelease } from "../../components/sideBar/filters/FilterDescendingYearRelease.js"
-import { handleClick } from "./handlers/handleClick.js"
-import { Checkbox } from "pretty-checkbox-react"
+import MovieList from "./movieList/movieList"
 import "@djthoms/pretty-checkbox"
 const API_URL = process.env.REACT_APP_API_URL
 
@@ -19,7 +16,6 @@ export default function Main(props) {
   const [filter, setFilter] = useState(null)
   let movieArray = top250Movies
   let imDbId = []
-  // const checkbox = useCheckboxState()
 
   if (filter === "filterAZ") {
     movieArray = FilterArrAZ(movieArray)
@@ -36,7 +32,6 @@ export default function Main(props) {
   if (filter === "none") {
     movieArray = top250Movies
   }
-
 
   useEffect(() => {
     if (!popularMovies) {
@@ -72,71 +67,13 @@ export default function Main(props) {
     console.log(imDbId)
   }
 
-
-// function getChecked (movieArray) {
-//     for(const movie of movieArray) {
-//       if (movie.id === 'tt0068646') {
-//         movie.checked = 'true'
-//       console.log('work', movie.checked, movie)
-//       }
-//     }
-//   }
-  
-  
-  
-  // const toggleChecked = () => setChecked(value => !value);
-
-
   return (
     <div className="body">
       <Aside setFilter={setFilter} />
       <main>
-        <nav id="movie-list">
-          {movieArray.map((movie, index) => (
-            <figure key={index} id="figure">
-              <div id="figure-image">
-                <img src={movie.image} alt={movie.fullTitle} />
-              </div>
-              <div className="figcaption">{movie.fullTitle}</div>
-              <div className="figureImdbRating">
-                <div className="figureRating">
-                  <p>⭐️{movie.imDbRating}</p>
-                </div>
-                <div className="imageOptions">
-                  <button
-                    onClick={() => {
-                      handleTrailer(movie.id)
-                    }}
-                  >
-                    <div className="imageOptionsLeftSide">
-                      <h3>Trailer</h3>
-                    </div>
-                  </button>
-                  <Link to={`/about-movie/${movie.id}`}>
-                    <div className="imageOptionsRightSide">
-                      <h3>More Info</h3>
-                    </div>
-                  </Link>
-                </div>
-                <div className="heartIcon">
-                  <Checkbox
-                    checked = {movie.checked}
-                    shape="round"
-                    style={{ fontSize: "40px" }}
-                    className="mdiHeartIcon"
-                    onChange={(e) => {handleClick(e, movie)}}
-                    icon={<i className="mdi mdi-heart-outline" />}
-                    animation="jelly"
-                    // onLoad = {getChecked(movie)}
-                  />
-                </div>
-              </div>
-            </figure>
-          ))}
-           {/* {getChecked(movieArray)} */}
-        </nav>
+        <MovieList movieArray={movieArray} />
         <HeaderMain />
       </main>
-      </div>
+    </div>
   )
 }
