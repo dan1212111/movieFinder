@@ -7,3 +7,24 @@ body {
     font-family: "Orbitron", sans-serif;
     src: url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 }
+
+.paperStyle {
+    padding: 20px;
+    height: 70vh;
+    width: 30vw;
+    margin: 5% auto;
+    min-height: 450px;
+}
+
+@media only screen and (max-width: 703px) {
+    .paperStyle {
+        width: 50vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .paperStyle {
+        width: 70vw;
+        min-Width: 200px;
+    }
+}

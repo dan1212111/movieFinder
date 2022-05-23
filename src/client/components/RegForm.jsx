@@ -12,12 +12,6 @@ export default function RegisterForm({ handleSubmit, registerError }) {
   const [helperTextPassword, setHelperTextPassword] = useState("")
   const [errorUsername, setErrorUsername] = useState(false)
   const [errorPassword, setErrorPassword] = useState(false)
-  const paperStyle = {
-    padding: 20,
-    height: "70vh",
-    width: "30vw",
-    margin: "5% auto",
-  }
   const signBox = { paddingBottom: "5%" }
   const avatarStyle = { backgroundColor: "#f4c518", marginTop: "15%" }
   const signTxt = { marginTop: "6%" }
@@ -58,7 +52,7 @@ export default function RegisterForm({ handleSubmit, registerError }) {
 
   return (
     <Grid>
-      <Paper elevation={10} style={paperStyle}>
+      <Paper elevation={10} className="paperStyle">
         <Grid align="center" style={signBox}>
           <Avatar style={avatarStyle}>
             <LockOutlinedIcon />
